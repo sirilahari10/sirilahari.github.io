@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<header class="blog-header">
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+</header>
+
+<div class="container" style="display:flex; gap:2rem; margin-top:2rem;">
+  <main style="flex:3;">
+    {% assign featured = site.posts | first %}
+    <section class="featured-post" style="border:1px solid #ddd; padding:1rem; margin-bottom:2rem;">
+      <h2>Featured Post</h2>
+      <a href="{{ featured.url | relative_url }}">
+        <h3>{{ featured.title }}</h3>
+      </a>
+      <p><small>{{ featured.date | date: "%B %d, %Y" }}</small></p>
+      <p>{{ featured.excerpt }}</p>
+    </section>
+
+    <section class="recent-posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        {% for post in site.posts offset:1 %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a> - 
+            <small>{{ post.date | date: "%B %d, %Y" }}</small>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </main>
+
+  <aside style="flex:1; border-left:1px solid #ddd; padding-left:1rem;">
+    <h3>Categories</h3>
+    <ul>
+      {% assign cats = site.posts | map: 'categories' | uniq | sort %}
+      {% for cat in cats %}
+        <li><a href="{{ site.baseurl }}/categories/{{ cat | downcase }}">{{ cat }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+</div>
