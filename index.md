@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="/assets/images/profile.jpg" alt="My profile picture" style="width:200px; border-radius:50%;">
+</p>
+
 <img src="/assets/images/profile.jpg" alt="My profile picture" style="width:200px; border-radius:50%;">
 
 ---
