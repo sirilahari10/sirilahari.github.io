@@ -1,23 +1,21 @@
 ---
 layout: default
-title: "Siri Lahari"
+title: Siri Lahari
 ---
 
-# Welcome to My Website
+<div class="hero">
+  <img src="/assets/profile.jpg" alt="Siri Lahari" class="profile-pic">
+  <h1>Hi, I'm Siri Lahari</h1>
+  <p class="subtitle">Tech enthusiast • Data explorer • Lifelong learner</p>
+</div>
 
-Hello! I'm **Siri Lahari**, and this is my personal website.  
-
-Here, I share my thoughts, blog posts, and updates.  
-
-## About Me
-
-I’m passionate about technology, data, and learning new things every day.  
-
-You can follow me on [GitHub](https://github.com/sirilahari10) or [LinkedIn](https://www.linkedin.com/in/sirilahari10/).  
-
----
-
-Thank you for visiting!
-
+<div class="about">
+  <h2>About Me</h2>
+  <p>
+    I love exploring technology, learning new skills, and sharing my ideas.
+    Follow my journey on <a href="https://github.com/sirilahari10">GitHub</a> 
+    or <a href="https://www.linkedin.com/in/sirilahari10/">LinkedIn</a>.
+  </p>
+</div>
 
 
