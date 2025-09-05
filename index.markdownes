@@ -1,7 +1,0 @@
-# Welcome to my website
-
-Hi, I’m Siri. I love coding, AI, and web development.
-
-Feel free to explore my site or reach out via email.
-
-
