@@ -1,3 +1,5 @@
+<img src="/assets/images/profile.jpg" alt="My profile picture" style="width:200px; border-radius:50%;">
+
 ---
 layout: default
 title: Siri Lahari
