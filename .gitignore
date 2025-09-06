@@ -1,0 +1,9 @@
+# editor / OS junk
+*~
+index.mdO*
+.DS_Store
+
+# build files
+_site
+.sass-cache
+node_modules
