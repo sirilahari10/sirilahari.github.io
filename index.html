@@ -6,37 +6,37 @@
 <title>Siri Lahari's Blog</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-    /* General Styles */
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; line-height: 1.6; }
-    a { text-decoration: none; color: #000; font-weight: 600; }
-    a:hover { color: #555; }
+    /* GENERAL */
+    body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#fff; color:#000; line-height:1.6; }
+    a { text-decoration:none; color:#000; font-weight:600; transition:0.2s; }
+    a:hover { color:#555; }
 
-    /* Header */
-    header { text-align: center; padding: 100px 20px; background: #fff; }
-    header h1 { font-size: 3em; margin-bottom: 10px; font-weight: 700; }
-    header p.subtitle { font-size: 1.2em; margin-bottom: 15px; font-weight: 400; }
-    header a { margin: 0 12px; }
+    /* HEADER */
+    header { text-align:center; padding:100px 20px; }
+    header h1 { font-size:3em; margin-bottom:10px; font-weight:700; }
+    header p.subtitle { font-size:1.2em; margin-bottom:15px; font-weight:400; }
+    header a { margin:0 12px; }
 
-    /* Main Container */
-    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    /* MAIN CONTAINER */
+    main { max-width:900px; margin:40px auto; padding:0 20px; }
 
-    /* Sections */
-    section { margin-bottom: 80px; }
-    section h2 { font-size: 2em; margin-bottom: 20px; font-weight: 600; border-bottom: 1px solid #000; display: inline-block; padding-bottom: 5px; }
-    section p { font-size: 1em; color: #333; }
+    /* SECTIONS */
+    section { margin-bottom:80px; }
+    section h2 { font-size:2em; margin-bottom:20px; font-weight:600; border-bottom:2px solid #000; display:inline-block; padding-bottom:5px; }
+    section p { font-size:1em; color:#333; }
 
-    /* Cards */
-    .card { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 25px; transition: transform 0.2s, box-shadow 0.2s; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-    .card h3 { margin: 0 0 10px 0; font-weight: 600; }
-    .card small { color: #888; font-size: 0.85em; }
-    .card p { color: #333; }
+    /* CARDS */
+    .card { background:#fff; border:1px solid #ddd; border-radius:12px; padding:25px; transition: transform 0.2s, box-shadow 0.2s; margin-bottom:20px; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.08); }
+    .card h3 { margin:0 0 10px 0; font-weight:600; }
+    .card small { color:#888; font-size:0.85em; }
+    .card p { color:#333; }
 
-    /* Blog Grid */
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    /* BLOG GRID */
+    .blog-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap:24px; }
 
-    /* Footer */
-    footer { text-align: center; padding: 50px 20px; background: #fff; color: #000; border-top: 1px solid #ddd; margin-top: 60px; font-size: 0.9em; }
+    /* FOOTER */
+    footer { text-align:center; padding:50px 20px; background:#fff; color:#000; border-top:1px solid #ddd; margin-top:60px; font-size:0.9em; }
 </style>
 </head>
 <body>
@@ -51,7 +51,7 @@
 </header>
 
 <main>
-    <!-- About Me -->
+    <!-- ABOUT -->
     <section>
         <h2>About Me</h2>
         <div class="card">
@@ -59,14 +59,14 @@
         </div>
     </section>
 
-    <!-- Blog -->
+    <!-- BLOG -->
     <section>
         <h2>Blog</h2>
         <p>Read my latest thoughts, tutorials, and insights about tech and data.</p>
         <div class="blog-grid" id="blog-cards"></div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section>
         <h2>Contact</h2>
         <div class="card">
@@ -80,28 +80,11 @@
 </footer>
 
 <script>
-// Example posts
+// Example blog posts
 const posts = [
   { title: "My First Blog Post", date: "September 6, 2025", url: "#", description: "A quick introduction to my journey in tech and data." },
   { title: "Second Blog Post", date: "September 7, 2025", url: "#", description: "Exploring Python for data analysis with hands-on examples." },
-  { title: "Third Blog Post", date: "September 8, 2025", url: "#", description: "Diving into web development with HTML, CSS, and JavaScript." }
-];
+  { title: "Third Blog Post", date: "September 8, 2025", url: "#", description: "Divi
 
-const container = document.getElementById('blog-cards');
-posts.forEach(post => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-        <h3><a href="${post.url}">${post.title}</a></h3>
-        <small>${post.date}</small>
-        <p>${post.description}</p>
-        <a href="${post.url}">Read More →</a>
-    `;
-    container.appendChild(card);
-});
-</script>
-
-</body>
-</html>
 
 
