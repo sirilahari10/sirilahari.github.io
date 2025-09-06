@@ -1,151 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siri Lahari's Blog</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decoded by Siri Lahari</title>
+<style>
     body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #fff;
-      color: #000;
-      margin: 0;
-      line-height: 1.6;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        background: #fff;
+        color: #000;
+        margin: 0;
+        line-height: 1.6;
     }
     header {
-      padding: 60px 20px;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
+        padding: 80px 20px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
     }
     header h1 {
-      font-size: 3em;
-      margin: 0.2em 0;
+        font-size: 4em;
+        margin: 0.2em 0;
     }
     header .subtitle {
-      font-size: 1.2em;
-      color: #555;
+        font-size: 1.2em;
+        color: #555;
     }
     main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
     }
     section {
-      padding: 60px 0;
-      border-bottom: 1px solid #eee;
+        padding: 60px 0;
+        border-bottom: 1px solid #eee;
     }
     section:last-child {
-      border-bottom: none;
+        border-bottom: none;
     }
     section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
+        font-size: 2em;
+        margin-bottom: 20px;
     }
     section p {
-      font-size: 1.1em;
-      color: #333;
+        font-size: 1.1em;
+        color: #333;
     }
-    a {
-      color: #000;
-      text-decoration: underline;
+    #blog-posts {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-    a:hover {
-      color: #555;
+    .post {
+        flex: 1 1 calc(33% - 20px);
+        border: 1px solid #000;
+        padding: 20px;
+        box-sizing: border-box;
+        background: #fff;
     }
-
-    /* Blog cards layout */
-    .blog-container {
-      display: flex;
-      gap: 20px;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .post h3 {
+        margin-top: 0;
     }
-    .blog-post {
-      flex: 1;
-      min-width: 250px;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 8px;
-      background: #fafafa;
-      text-align: left;
+    .post p {
+        margin-bottom: 10px;
     }
-    .blog-post h3 {
-      margin-top: 0;
-    }
-    .blog-post .date {
-      font-size: 0.9em;
-      color: #666;
-    }
+    #contact form input, #contact form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #000;
+        background: #fff;
+        color: #000;
+        box-sizing:
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #f5f5f5;
-      font-size: 0.9em;
-      color: #666;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Siri Lahari's Blog</h1>
-    <p class="subtitle">Exploring Technology, Data, and Lifelong Learning</p>
-    <p>
-      <a href="https://github.com/sirilahari10" target="_blank">GitHub</a> • 
-      <a href="https://www.linkedin.com/in/sirilahari10/" target="_blank">LinkedIn</a>
-    </p>
-  </header>
-
-  <main>
-    <section id="why">
-      <h2>Why I Write</h2>
-      <p>Technology shouldn’t feel like an exclusive club with its own secret handshake. It’s not just for coders, engineers, or people who can recite programming languages in their sleep. Tech is for everyone, because it shapes the world we all live in.</p>
-    </section>
-
-    <section id="approach">
-      <h2>My Approach</h2>
-      <p>I take the complicated stuff and turn it into stories you can actually follow—no jargon walls, no “you should already know this” attitude. Just plain language, real-life examples, and a bit of curiosity to keep it fun. If you’ve ever had a friend explain something so clearly that you thought, “Ohhh… now I get it”, that’s exactly the feeling I’m aiming for here.</p>
-    </section>
-
-    <section id="what">
-      <h2>What You’ll Find Here</h2>
-      <p>From decoding buzzwords to walking through hands-on projects, I share ideas in a way that welcomes everyone. Whether you’ve been in tech for decades or you’re just wondering what “the cloud” actually is, you’ll find something here that makes you think, smile, or maybe even try something new.</p>
-    </section>
-
-    <section id="blog">
-      <h2>Blog</h2>
-      <div class="blog-container">
-        <div class="blog-post">
-          <h3>My First Blog Post</h3>
-          <p class="date">September 6, 2025</p>
-          <p>A quick introduction to my journey in tech and data.</p>
-          <a href="#">Read More →</a>
-        </div>
-        <div class="blog-post">
-          <h3>Second Blog Post</h3>
-          <p class="date">September 7, 2025</p>
-          <p>Exploring Python for data analysis with hands-on examples.</p>
-          <a href="#">Read More →</a>
-        </div>
-        <div class="blog-post">
-          <h3>Third Blog Post</h3>
-          <p class="date">September 8, 2025</p>
-          <p>Diving into web development with HTML, CSS, and JavaScript.</p>
-          <a href="#">Read More →</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Reach out via <a href="https://www.linkedin.com/in/sirilahari10/" target="_blank">LinkedIn</a> or <a href="https://github.com/sirilahari10" target="_blank">GitHub</a>.</p>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 Siri Lahari
-  </footer>
-</body>
-</html>
 
 
