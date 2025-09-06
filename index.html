@@ -6,37 +6,36 @@
 <title>Siri Lahari's Blog</title>
 <style>
     /* General Styles */
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f0f4f8; color: #333; }
-    a { text-decoration: none; }
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
+    a { text-decoration: none; color: #000; font-weight: bold; }
     a:hover { text-decoration: underline; }
 
     /* Header */
-    header { text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #FFD1BA, #FF6B6B); color: #333; }
+    header { text-align: center; padding: 80px 20px; background: #fff; color: #000; }
     header h1 { font-size: 3em; margin-bottom: 10px; }
     header p.subtitle { font-size: 1.2em; margin-bottom: 15px; }
-    header a { margin: 0 10px; color: #1E90FF; font-weight: bold; }
+    header a { margin: 0 10px; }
 
     /* Main Container */
-    main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 
     /* Sections */
     section { margin-bottom: 60px; }
-    section h2 { font-size: 2em; margin-bottom: 10px; color: #FF4500; border-bottom: 2px solid #FF4500; display: inline-block; padding-bottom: 5px; }
-    section p { font-size: 1em; margin-bottom: 20px; color: #555; }
+    section h2 { font-size: 2em; margin-bottom: 10px; border-bottom: 2px solid #000; display: inline-block; padding-bottom: 5px; }
+    section p { font-size: 1em; margin-bottom: 20px; }
 
     /* Cards */
-    .card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s; }
+    .card { background: #fff; border: 1px solid #000; border-radius: 8px; padding: 20px; transition: transform 0.2s; }
     .card:hover { transform: translateY(-5px); }
-    .card h3 { margin: 0 0 5px 0; color: #FF4500; }
-    .card small { color: #888; font-size: 0.85em; }
-    .card p { color: #555; }
-    .card a { color: #1E90FF; font-weight: bold; }
+    .card h3 { margin: 0 0 5px 0; }
+    .card small { color: #555; font-size: 0.85em; }
+    .card p { color: #000; }
 
     /* Blog Grid */
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 
     /* Footer */
-    footer { text-align: center; padding: 40px 20px; background: #FFE4E1; color: #333; margin-top: 60px; }
+    footer { text-align: center; padding: 40px 20px; background: #fff; color: #000; border-top: 1px solid #000; margin-top: 60px; }
 </style>
 </head>
 <body>
@@ -54,38 +53,8 @@
     <!-- About Me -->
     <section>
         <h2>About Me</h2>
-        <p>Learn more about who I am, my passions, and what drives me every day.</p>
         <div class="card">
             <p>I love exploring technology, learning new skills, and sharing my ideas with the world.</p>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section>
-        <h2>Skills</h2>
-        <p>A snapshot of the technologies and tools I work with every day.</p>
-        <div class="card">
-            <ul>
-                <li>Python / Data Analysis</li>
-                <li>Machine Learning & AI</li>
-                <li>Web Development (HTML, CSS, JavaScript)</li>
-                <li>Git & GitHub</li>
-                <li>Cloud Platforms (AWS, GCP)</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section>
-        <h2>Projects</h2>
-        <p>Check out some of the projects I’ve built, from small experiments to larger applications.</p>
-        <div class="card">
-            <a href="https://github.com/sirilahari10/project1">Project 1</a>
-            <p>Short description of Project 1</p>
-        </div>
-        <div class="card">
-            <a href="https://github.com/sirilahari10/project2">Project 2</a>
-            <p>Short description of Project 2</p>
         </div>
     </section>
 
@@ -99,7 +68,6 @@
     <!-- Contact -->
     <section>
         <h2>Contact</h2>
-        <p>If you want to connect or collaborate, here’s how to reach me.</p>
         <div class="card">
             <p>Reach out via <a href="https://www.linkedin.com/in/sirilahari10/">LinkedIn</a> or <a href="https://github.com/sirilahari10">GitHub</a>.</p>
         </div>
@@ -111,7 +79,7 @@
 </footer>
 
 <script>
-// Example posts for Pering-style layout
+// Example posts
 const posts = [
   {
     title: "My First Blog Post",
