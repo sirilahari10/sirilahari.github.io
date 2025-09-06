@@ -1,10 +1,9 @@
-cat > index.md <<'MARKDOWN'
 ---
 layout: home
 title: "Hi, I'm Siri Lahari"
 ---
 
-## Hi, I'm Siri Lahari 👋
+# Hi, I'm Siri Lahari 👋
 
 Tech enthusiast • Data explorer • Lifelong learner
 
