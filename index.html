@@ -26,7 +26,7 @@
       color: #555;
     }
     main {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
@@ -52,15 +52,37 @@
     a:hover {
       color: #555;
     }
-    #blog-posts div {
-      margin-bottom: 40px;
+
+    /* Blog cards layout */
+    .blog-container {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
+    .blog-post {
+      flex: 1;
+      min-width: 250px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      background: #fafafa;
+      text-align: left;
+    }
+    .blog-post h3 {
+      margin-top: 0;
+    }
+    .blog-post .date {
+      font-size: 0.9em;
+      color: #666;
+    }
+
     footer {
       text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #ccc;
+      padding: 30px;
+      background: #f5f5f5;
       font-size: 0.9em;
-      color: #555;
+      color: #666;
     }
   </style>
 </head>
@@ -68,81 +90,62 @@
   <header>
     <h1>Siri Lahari's Blog</h1>
     <p class="subtitle">Exploring Technology, Data, and Lifelong Learning</p>
-    <p><a href="#">GitHub</a> • <a href="#">LinkedIn</a></p>
+    <p>
+      <a href="https://github.com/sirilahari10" target="_blank">GitHub</a> • 
+      <a href="https://www.linkedin.com/in/sirilahari10/" target="_blank">LinkedIn</a>
+    </p>
   </header>
 
   <main>
-    <!-- Why I Write -->
-    <section id="why-i-write">
+    <section id="why">
       <h2>Why I Write</h2>
-      <p>
-        Technology shouldn’t feel like an exclusive club with its own secret handshake. 
-        It’s not just for coders, engineers, or people who can recite programming 
-        languages in their sleep. Tech is for everyone, because it shapes the world 
-        we all live in.
-      </p>
+      <p>Technology shouldn’t feel like an exclusive club with its own secret handshake. It’s not just for coders, engineers, or people who can recite programming languages in their sleep. Tech is for everyone, because it shapes the world we all live in.</p>
     </section>
 
-    <!-- My Approach -->
-    <section id="my-approach">
+    <section id="approach">
       <h2>My Approach</h2>
-      <p>
-        I take the complicated stuff and turn it into stories you can actually follow,
-        no jargon walls, no “you should already know this” attitude. Just plain language, 
-        real-life examples, and a bit of curiosity to keep it fun. If you’ve ever had a 
-        friend explain something so clearly that you thought, 
-        <em>“Ohhh… now I get it”</em>, that’s exactly the feeling I’m aiming for here.
-      </p>
+      <p>I take the complicated stuff and turn it into stories you can actually follow—no jargon walls, no “you should already know this” attitude. Just plain language, real-life examples, and a bit of curiosity to keep it fun. If you’ve ever had a friend explain something so clearly that you thought, “Ohhh… now I get it”, that’s exactly the feeling I’m aiming for here.</p>
     </section>
 
-    <!-- What You'll Find Here -->
-    <section id="what-youll-find">
+    <section id="what">
       <h2>What You’ll Find Here</h2>
-      <p>
-        From decoding buzzwords to walking through hands-on projects, I share ideas 
-        in a way that welcomes everyone. Whether you’ve been in tech for decades or 
-        you’re just wondering what “the cloud” actually is, you’ll find something here 
-        that makes you think, smile, or maybe even try something new.
-      </p>
+      <p>From decoding buzzwords to walking through hands-on projects, I share ideas in a way that welcomes everyone. Whether you’ve been in tech for decades or you’re just wondering what “the cloud” actually is, you’ll find something here that makes you think, smile, or maybe even try something new.</p>
     </section>
 
-    <!-- Blog Section -->
     <section id="blog">
       <h2>Blog</h2>
-      <div id="blog-posts">
-        <div>
+      <div class="blog-container">
+        <div class="blog-post">
           <h3>My First Blog Post</h3>
-          <small>September 6, 2025</small>
+          <p class="date">September 6, 2025</p>
           <p>A quick introduction to my journey in tech and data.</p>
           <a href="#">Read More →</a>
         </div>
-        <div>
+        <div class="blog-post">
           <h3>Second Blog Post</h3>
-          <small>September 7, 2025</small>
+          <p class="date">September 7, 2025</p>
           <p>Exploring Python for data analysis with hands-on examples.</p>
           <a href="#">Read More →</a>
         </div>
-        <div>
+        <div class="blog-post">
           <h3>Third Blog Post</h3>
-          <small>September 8, 2025</small>
+          <p class="date">September 8, 2025</p>
           <p>Diving into web development with HTML, CSS, and JavaScript.</p>
           <a href="#">Read More →</a>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>Reach out via <a href="#">LinkedIn</a> or <a href="#">GitHub</a>.</p>
+      <p>Reach out via <a href="https://www.linkedin.com/in/sirilahari10/" target="_blank">LinkedIn</a> or <a href="https://github.com/sirilahari10" target="_blank">GitHub</a>.</p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Siri Lahari</p>
+    © 2025 Siri Lahari
   </footer>
 </body>
 </html>
-
 
 
