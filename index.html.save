@@ -1,0 +1,71 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siri Lahari</title>
+<style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; color: #000; margin: 0; line-height: 1.6; }
+    header { padding: 60px 20px; text-align: center; border-bottom: 1px solid #ccc; }
+    header h1 { font-size: 3em; margin: 0.2em 0; }
+    header .subtitle { font-size: 1.2em; color: #555; }
+    a { color: #000; text-decoration: underline; }
+    a:hover { color: #555; }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    section { padding: 60px 0; border-bottom: 1px solid #eee; }
+    section:last-child { border-bottom: none; }
+    section h2 { font-size: 2em; margin-bottom: 20px; }
+    section p { font-size: 1.1em; color: #333; }
+    .about-container { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; margin-top: 20px; }
+    .about-text { flex: 1 1 300px; }
+    .about-image { flex: 1 1 300px; }
+    .about-image img { max-width: 100%; height: auto; border-radius: 8px; }
+    footer { padding: 40px 20px; text-align: center; border-top: 1px solid #ccc; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Siri Lahari</h1>
+    <p class="subtitle">Tech enthusiast • Data explorer • Lifelong learner</p>
+    <p>
+        <a href="https://github.com/sirilahari10">GitHub</a> • 
+        <a href="https://www.linkedin.com/in/sirilahari10/">LinkedIn</a>
+    </p>
+</header>
+
+<main>
+    <!-- Why I Started Section -->
+    <section id="about">
+        <h2>Why I Started This Blog</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>
+                    I started this blog to document my journey in technology and data science,
+                    share my learning experiences, and help others exploring the same fields.
+                </p>
+                <p>
+                    Here, you’ll find tutorials, projects, and insights about programming, data analysis, and tech trends.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="assets/images/data-science.jpg" alt="Data Science">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Reach out via <a href="https://github.com/sirilahari10">GitHub</a> or <a href="https://www.linkedin.com/in/sirilahari10/">LinkedIn</a>.</p>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Siri Lahari
+</footer>
+
+</body>
+</html>
+
+
+
+
+
