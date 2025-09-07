@@ -12,151 +12,141 @@
         margin: 0;
         line-height: 1.6;
     }
-
     header {
-        padding: 60px 20px;
+        padding: 80px 20px;
         text-align: center;
-        border-bottom: 1px solid #ccc;
     }
-
     header h1 {
         font-size: 4em;
-        margin-bottom: 0.2em;
+        margin: 0.2em 0;
     }
-
-    header p.subtitle {
+    header .subtitle {
         font-size: 1.5em;
-        color: #555;
-        margin-top: 0;
+        margin-bottom: 0.5em;
     }
-
     main {
-        max-width: 900px;
+        max-width: 1000px;
         margin: 40px auto;
         padding: 0 20px;
     }
-
     section {
         padding: 60px 0;
         border-bottom: 1px solid #eee;
     }
-
     section:last-child {
         border-bottom: none;
     }
-
     section h2 {
         font-size: 2em;
         margin-bottom: 20px;
     }
-
     section p {
         font-size: 1.1em;
         color: #333;
     }
-
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    a:hover {
+        color: #555;
+    }
     #blog-posts {
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
     }
-
-    #blog-posts div {
-        flex: 1 1 250px;
+    #blog-posts .post {
+        flex: 1 1 30%;
         border: 1px solid #ccc;
         padding: 20px;
         box-sizing: border-box;
     }
-
-    #blog-posts div h3 {
-        margin-top: 0;
+    #streamlit-demo button {
+        padding: 12px 24px;
+        font-size: 16px;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
     }
-
     footer {
         padding: 40px 20px;
-        background: #f9f9f9;
+        background: #f0f0f0;
         color: #333;
+        text-align: center;
     }
-
-    input, textarea, button {
+    input, textarea {
         width: 100%;
         padding: 10px;
-        margin: 5px 0 15px 0;
+        margin: 5px 0 15px;
+        border: 1px solid #ccc;
         box-sizing: border-box;
-        font-size: 1em;
     }
-
-    button {
-        cursor: pointer;
-        background: #000;
-        color: #fff;
+    button.send {
+        background-color: black;
+        color: white;
+        padding: 12px 20px;
         border: none;
+        cursor: pointer;
     }
 </style>
 </head>
 <body>
-
 <header>
     <h1>Decoded by Siri Lahari</h1>
-    <p class="subtitle">Exploring Tech, Data & Lifelong Learning</p>
+    <p class="subtitle">Exploring Technology, Data, and Lifelong Learning</p>
 </header>
-
 <main>
+    <section id="why-i-write">
+        <h2>Why I Write</h2>
+        <p>Technology shouldn’t feel like an exclusive club with its own secret handshake. It’s not just for coders, engineers, or people who can recite programming languages in their sleep. Tech is for everyone, because it shapes the world we all live in.</p>
+        <h3>My Approach</h3>
+        <p>I take the complicated stuff and turn it into stories you can actually follow, no jargon walls, no “you should already know this” attitude. Just plain language, real-life examples, and a bit of curiosity to keep it fun. If you’ve ever had a friend explain something so clearly that you thought, “Ohhh… now I get it”, that’s exactly the feeling I’m aiming for here.</p>
+        <h3>What You’ll Find Here</h3>
+        <p>From decoding buzzwords to walking through hands-on projects, I share ideas in a way that welcomes everyone. Whether you’ve been in tech for decades or you’re just wondering what “the cloud” actually is, you’ll find something here that makes you think, smile, or maybe even try something new.</p>
+    </section>
 
-<section id="why-i-write">
-    <h2>Why I Write</h2>
-    <p>Technology shouldn’t feel like an exclusive club with its own secret handshake. It’s not just for coders, engineers, or people who can recite programming languages in their sleep. Tech is for everyone, because it shapes the world we all live in.</p>
-    <h3>My Approach</h3>
-    <p>I take the complicated stuff and turn it into stories you can actually follow, no jargon walls, no “you should already know this” attitude. Just plain language, real-life examples, and a bit of curiosity to keep it fun. If you’ve ever had a friend explain something so clearly that you thought, “Ohhh… now I get it”, that’s exactly the feeling I’m aiming for here.</p>
-    <h3>What You’ll Find Here</h3>
-    <p>From decoding buzzwords to walking through hands-on projects, I share ideas in a way that welcomes everyone. Whether you’ve been in tech for decades or you’re just wondering what “the cloud” actually is, you’ll find something here that makes you think, smile, or maybe even try something new.</p>
-</section>
-
-<section id="blog">
-    <h2>Blog</h2>
-    <div id="blog-posts">
-        <div>
-            <h3>My First Blog Post</h3>
-            <p><strong>September 6, 2025</strong></p>
-            <p>A quick introduction to my journey in tech and data.</p>
-            <a href="#">Read More →</a>
+    <section id="blog">
+        <h2>Blog</h2>
+        <div id="blog-posts">
+            <div class="post">
+                <h3>My First Blog Post</h3>
+                <p><em>September 6, 2025</em></p>
+                <p>A quick introduction to my journey in tech and data.</p>
+                <a href="#">Read More →</a>
+            </div>
+            <div class="post">
+                <h3>Second Blog Post</h3>
+                <p><em>September 7, 2025</em></p>
+                <p>Exploring Python for data analysis with hands-on examples.</p>
+                <a href="#">Read More →</a>
+            </div>
+            <div class="post">
+                <h3>Third Blog Post</h3>
+                <p><em>September 8, 2025</em></p>
+                <p>Diving into web development with HTML, CSS, and JavaScript.</p>
+                <a href="#">Read More →</a>
+            </div>
         </div>
-        <div>
-            <h3>Second Blog Post</h3>
-            <p><strong>September 7, 2025</strong></p>
-            <p>Exploring Python for data analysis with hands-on examples.</p>
-            <a href="#">Read More →</a>
-        </div>
-        <div>
-            <h3>Third Blog Post</h3>
-            <p><strong>September 8, 2025</strong></p>
-            <p>Diving into web development with HTML, CSS, and JavaScript.</p>
-            <a href="#">Read More →</a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Reach out directly via email or send me a message:</p>
-    <form action="mailto:your-email@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+    <section id="streamlit-demo">
+        <h2>Interactive Netflix Recommendation Demo</h2>
+        <p>Try my Streamlit demo where you can explore Netflix recommendations based on your favorite shows!</p>
+        <a href="https://netflix-demo.streamlit.app" target="_blank">
+            <button>Open Demo</button>
+        </a>
+    </section>
 
-<footer>
-    &copy; 2025 Siri Lahari
-</footer>
-
-</body>
-</html>
-
-
-
-
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Reach out to me directly via email or send a message:</p>
+        <form action="sirilaharichava10@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button class="send" type="submit">Send Message</button>
 
 
 
