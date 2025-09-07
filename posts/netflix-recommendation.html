@@ -3,157 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Decoded: Netflix Recommendations by Siri Lahari</title>
+<title>Decoded: How Netflix Knows What You’ll Watch Next | Siri Lahari</title>
 <style>
-    body {
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-        background: #fff;
-        color: #000;
-        margin: 0;
-        line-height: 1.6;
-    }
-    header {
-        padding: 60px 20px;
-        text-align: center;
-        border-bottom: 1px solid #ccc;
-    }
-    header h1 {
-        font-size: 3em;
-        margin: 0.2em 0;
-    }
-    header p.subtitle {
-        font-size: 1.2em;
-        color: #555;
-    }
-    main {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
-    section {
-        padding: 40px 0;
-        border-bottom: 1px solid #eee;
-    }
-    section:last-child {
-        border-bottom: none;
-    }
-    section h2 {
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
-    section h3 {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-        color: #333;
-    }
-    section p {
-        font-size: 1.1em;
-        color: #333;
-        margin-bottom: 15px;
-    }
-    a {
-        color: #000;
-        text-decoration: underline;
-    }
-    a:hover {
-        color: #555;
-    }
-    ul {
-        padding-left: 20px;
-    }
-    li {
-        margin-bottom: 10px;
-    }
-    footer {
-        padding: 40px 20px;
-        background: #f8f8f8;
-        text-align: center;
-        font-size: 0.9em;
-        color: #333;
-    }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; color: #000; margin: 0; line-height: 1.6; }
+    header { padding: 40px 20px; text-align: center; border-bottom: 1px solid #ccc; }
+    header h1 { font-size: 2.8em; margin: 0.2em 0; }
+    main { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    section { margin-bottom: 60px; }
+    h2 { font-size: 1.8em; margin-top: 1em; color: #111; }
+    h3 { font-size: 1.3em; margin-top: 1em; color: #333; }
+    p { font-size: 1.1em; margin-bottom: 1em; }
+    a { color: #000; text-decoration: underline; }
+    a:hover { color: #555; }
+    ul { margin: 0 0 1em 1.5em; }
+    .back-link { margin-top: 40px; display: block; font-weight: bold; }
 </style>
 </head>
 <body>
 
 <header>
     <h1>Decoded: How Netflix Knows What You’ll Watch Next</h1>
-    <p class="subtitle">By Siri Lahari — September 9, 2025</p>
+    <p>By Siri Lahari — September 9, 2025</p>
 </header>
 
 <main>
     <section>
-        <p>Ever notice how Netflix seems to know exactly what you’re in the mood for — even before you do? You finish one show, and the next suggestion feels oddly perfect. That’s not luck. It’s data science in action: learning your habits and making smart predictions.</p>
+        <p>Ever notice how Netflix seems to know exactly what you’re in the mood for — even before you do? You finish one show, and the next suggestion feels oddly perfect. That’s not luck. It’s data science doing what it does best: learning your habits and making smart predictions.</p>
     </section>
 
     <section>
         <h2>🔎 The Core Idea: Recommendations</h2>
-        <p>Netflix’s system answers one simple question:</p>
+        <p>Netflix’s system is built to answer one question:</p>
         <blockquote>“What should we show you so you keep watching?”</blockquote>
         <p>To do this, they combine three key approaches:</p>
 
-        <h3>1. Collaborative Filtering</h3>
-        <p>Looks at users with similar tastes. If you loved <em>Stranger Things</em> and someone else did too — and they also loved <em>Dark</em> — Netflix might suggest <em>Dark</em> to you. Think: “people like you also liked…” in algorithm form.</p>
+        <h3>Collaborative Filtering</h3>
+        <p>Looks at users who watch similar things. If you loved Stranger Things and someone else did too — and they also loved Dark — Netflix might suggest Dark to you. It’s basically “people like you also liked…” in algorithm form.</p>
 
-        <h3>2. Content-Based Filtering</h3>
-        <p>Focuses on the shows themselves: genre, actors, tone, keywords. Watched a sci-fi thriller with strong leads? Netflix may suggest similar titles, even without much “people like you” data.</p>
+        <h3>Content-Based Filtering</h3>
+        <p>Focuses on the characteristics of shows themselves: genre, actors, keywords, tone. If you watch sci-fi thrillers with strong leads, Netflix can suggest similar titles even if your viewers-with-similar-tastes data is slim.</p>
 
-        <h3>3. Hybrid Models</h3>
-        <p>Netflix mixes both approaches along with contextual signals like:</p>
+        <h3>Hybrid Models</h3>
+        <p>Netflix doesn’t rely on a single trick — it mixes collaborative and content-based approaches, plus contextual signals like:</p>
         <ul>
-            <li>Time of day you’re watching</li>
-            <li>Device you’re on</li>
+            <li>What time of day you’re watching</li>
+            <li>What device you’re on</li>
             <li>Whether you finish episodes or drop off</li>
         </ul>
-        <p>This hybrid approach makes recommendations more accurate and personalized.</p>
+        <p>That hybrid approach makes recommendations more accurate and personalized.</p>
     </section>
 
     <section>
         <h2>📊 Why It Works So Well</h2>
-        <p>Netflix runs continuous A/B tests — showing slightly different layouts, thumbnails, and recommendations to different users. They track what makes people click and what keeps them watching. Even the thumbnail for the same movie can differ from user to user to boost engagement.</p>
+        <p>Netflix runs continuous A/B tests — different users see slightly different recommendations, thumbnails, and layouts. The company measures what makes people click and what keeps them watching. Even the thumbnail for a single movie can differ from user to user to improve engagement.</p>
     </section>
 
     <section>
         <h2>📖 When Netflix Got It Wrong (And Learned)</h2>
-        <p>One night I had just finished a light rom-com. Netflix suggested <em>You</em> — a psychological thriller. Not exactly the vibe I wanted.</p>
-        <p>I clicked, bailed halfway through, and the next day saw more rom-coms and fewer thrillers. The system adapted based on my behavior — every click, skip, and watch-time counts as feedback.</p>
+        <p>One night I’d just finished a light rom-com and hoped for something similar. Netflix suggested <em>You</em> — a psychological thriller. Not the vibe. I clicked, bailed halfway through, and the next day saw more rom-coms and fewer murder dramas. The system took my behavior as feedback and adapted.</p>
+        <p><strong>Note:</strong> That small feedback loop — clicks, skips, watch-time — is how recommendation systems learn in production.</p>
     </section>
 
     <section>
         <h2>💻 Try It Yourself: A Mini Recommender</h2>
-        <p>I built a <strong>mini Netflix demo</strong> using Python + Streamlit to illustrate the idea:</p>
-        <ul>
-            <li>Rate a few shows — just a handful.</li>
-            <li>The app compares your ratings with a small dataset of other users.</li>
-            <li>See which shows it recommends based on collaborative filtering and content hints.</li>
-        </ul>
-        <p>It’s not Netflix-level, but it’s surprisingly fun to see how a few ratings can lead to solid recommendations.</p>
-        <p><a href="https://netflix-demo.streamlit.app/" target="_blank">▶ Open Interactive Demo</a></p>
-        <p><strong>Exercise:</strong> Rate 3–5 shows and see which recommendations feel spot-on. Try changing one rating — notice how the suggestions update!</p>
+        <p>I built a simple demo in Python + Streamlit that demonstrates the basic idea: you rate a few shows, and the app suggests titles based on collaborative filtering and simple content filters. It’s not Netflix-level, but it’s a great hands-on way to learn.</p>
+        <p><a href="https://sirilahari10-sirilahari-github-io-app-5fdozj.streamlit.app/" target="_blank">Interactive Demo</a></p>
+        <p>Exercise: Open the demo and rate 3–5 shows. Notice which recommendations feel spot on — and which don’t. Try changing one rating and see how the suggestions change.</p>
     </section>
 
     <section>
         <h2>🚀 Why This Matters</h2>
-        <p>Recommendation systems aren’t just for Netflix:</p>
-        <ul>
-            <li>Spotify curates your Discover Weekly 🎶</li>
-            <li>Amazon suggests products you might like 🛒</li>
-            <li>LinkedIn recommends jobs 👩‍💻</li>
-        </ul>
-        <p>As a data enthusiast, I love seeing how algorithms + real-world data can enhance our everyday experiences. Building this demo reinforced how even simple models can teach us a lot about user behavior and personalization.</p>
+        <p>Recommendation systems power more than TV: Spotify creates your Discover Weekly, Amazon suggests products, and LinkedIn recommends jobs. These systems influence the products people discover and choose — a huge impact on user experience and business metrics.</p>
     </section>
 
     <section>
-        <h2>✅ Takeaway</h2>
-        <p>Next time Netflix recommends a show you love (or hate), remember: there’s a whole world of math, data, and testing behind that single suggestion. Building your own recommender is a fantastic way to learn about modeling, evaluation, and user-focused design.</p>
-        <p><a href="index.html">← Back to home</a></p>
-    </section>
-</main>
-
-<footer>
-    © 2025 Siri Lahari
-</footer>
-
-</body>
-</html>
 
 
