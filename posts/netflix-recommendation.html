@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Decoded: How Netflix Knows What You’ll Watch Next — Siri Lahari</title>
+<style>
+  :root{ --max-width:900px; --accent:#000; --muted:#666; }
+  body{ font-family:"Helvetica Neue", Arial, sans-serif; margin:0; background:#fff; color:#000; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  .wrap{ max-width:var(--max-width); margin:40px auto; padding:20px; }
+  header.site-header{ text-align:center; padding:40px 20px; border-bottom:1px solid #eee; }
+  header.site-header h1{ margin:0; font-size:2.2em; }
+  header.site-header p{ margin:6px 0 0; color:var(--muted); }
+  article.post{ margin-top:30px; }
+  article.post h2{ font-size:1.6em; margin:0 0 12px 0; }
+  .meta{ color:var(--muted); margin-bottom:20px; }
+  section.block{ margin:28px 0; }
+  .exercise, .note{ border-left:4px solid #eee; background:#fafafa; padding:12px 16px; margin:16px 0; color:#333; border-radius:4px; }
+  .blog-iframe{ width:100%; height:560px; border:1px solid #eee; }
+  .back{ display:inline-block; margin-top:30px; color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; }
+  .back:hover{ border-bottom-color:var(--accent); }
+  footer.post-foot{ margin-top:40px; padding-top:20px; border-top:1px solid #eee; color:var(--muted); font-size:0.95em; }
+  @media (max-width:720px){ header.site-header h1{ font-size:1.6em; } .blog-iframe{ height:420px; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <h1>Decoded: How Netflix Knows What You’ll Watch Next</h1>
+      <p>By Siri Lahari — September 9, 2025</p>
+    </header>
+
+    <article class="post">
+      <section class="block">
+        <p><strong>Ever notice how Netflix seems to know exactly what you’re in the mood for — even before you do?</strong> You finish one show, and the next suggestion feels oddly perfect. That’s not luck. It’s data science doing what it does best: learning your habits and making smart predictions.</p>
+      </section>
+
+      <section class="block">
+        <h2>🔎 The Core Idea: Recommendations</h2>
+        <p>Netflix’s system is built to answer one question:</p>
+        <p><em>“What should we show you so you keep watching?”</em></p>
+        <p>To do this, they combine three key approaches:</p>
+
+        <h3>Collaborative Filtering</h3>
+        <p>Looks at users who watch similar things. If you loved <em>Stranger Things</em> and someone else did too — and they also loved <em>Dark</em> — Netflix might suggest <em>Dark</em> to you. It’s basically “people like you also liked…” in algorithm form.</p>
+
+        <h3>Content-Based Filtering</h3>
+        <p>Focuses on the characteristics of shows themselves: genre, actors, keywords, tone. If you watch sci-fi thrillers with strong leads, Netflix can suggest similar titles even if your viewers-with-similar-tastes data is slim.</p>
+
+        <h3>Hybrid Models</h3>
+        <p>Netflix doesn’t rely on a single trick — it mixes collaborative and content-based approaches, plus contextual signals like:</p>
+        <ul>
+          <li>What time of day you’re watching</li>
+          <li>What device you’re on</li>
+          <li>Whether you finish episodes or drop off</li>
+        </ul>
+        <p>That hybrid approach makes recommendations more accurate and personalized.</p>
+      </section>
+
+      <section class="block">
+        <h2>📊 Why It Works So Well</h2>
+        <p>Netflix runs continuous A/B tests — different users see slightly different recommendations, thumbnails, and layouts. The company measures what makes people click and what keeps them watching. Even the thumbnail for a single movie can differ from user to user to improve engagement.</p>
+      </section>
+
+      <section class="block">
+        <h2>📖 When Netflix Got It Wrong (And Learned)</h2>
+        <p>One night I’d just finished a light rom-com and hoped for something similar. Netflix suggested <em>You</em> — a psychological thriller. Not the vibe. I clicked, bailed halfway through, and the next day saw more rom-coms and fewer murder dramas. The system took my behavior as feedback and adapted.</p>
+        <div class="note">
+          <strong>Note:</strong> That small feedback loop — clicks, skips, watch-time — is how recommendation systems learn in production.
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>💻 Try It Yourself: A Mini Recommender</h2>
+        <p>I built a simple demo in Python + Streamlit that demonstrates the basic idea: you rate a few shows, and the app suggests titles based on collaborative filtering and simple content filters. It’s not Netflix-level, but it’s a great hands-on way to learn.</p>
+
+        <h3>Interactive Demo</h3>
+        <iframe class="blog-iframe" src="STREAMLIT_URL" title="Netflix Recommendation Demo (Streamlit)"></iframe>
+
+        <div class="exercise">
+          <strong>Exercise:</strong> Open the demo and rate 3–5 shows. Notice which recommendations feel spot on — and which don’t. Try changing one rating and see how the suggestions change.
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>🚀 Why This Matters</h2>
+        <p>Recommendation systems power more than TV: Spotify creates your Discover Weekly, Amazon suggests products, and LinkedIn recommends jobs. These systems influence the products people discover and choose — a huge impact on user experience and business metrics.</p>
+      </section>
+
+      <section class="block">
+        <h2>✅ Takeaway</h2>
+        <p>Next time Netflix recommends something you love (or hates), remember there’s a whole pipeline of data, models, A/B tests, and product thinking behind that one suggestion. If you’re learning data science, building even a small recommender is an excellent way to practice modeling, evaluation, and user-focused design.</p>
+      </section>
+
+      <a class="back" href="../index.html">← Back to home</a>
+
+      <footer class="post-foot">
+        <p>© 2025 Siri Lahari</p>
+      </footer>
+    </article>
+  </div>
+</body>
+</html>
+
+
