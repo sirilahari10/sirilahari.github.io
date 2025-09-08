@@ -1,71 +1,152 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Siri Lahari</title>
-<style>
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; color: #000; margin: 0; line-height: 1.6; }
-    header { padding: 60px 20px; text-align: center; border-bottom: 1px solid #ccc; }
-    header h1 { font-size: 3em; margin: 0.2em 0; }
-    header .subtitle { font-size: 1.2em; color: #555; }
-    a { color: #000; text-decoration: underline; }
-    a:hover { color: #555; }
-    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-    section { padding: 60px 0; border-bottom: 1px solid #eee; }
-    section:last-child { border-bottom: none; }
-    section h2 { font-size: 2em; margin-bottom: 20px; }
-    section p { font-size: 1.1em; color: #333; }
-    .about-container { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; margin-top: 20px; }
-    .about-text { flex: 1 1 300px; }
-    .about-image { flex: 1 1 300px; }
-    .about-image img { max-width: 100%; height: auto; border-radius: 8px; }
-    footer { padding: 40px 20px; text-align: center; border-top: 1px solid #ccc; }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decoded by Siri Lahari</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      margin: 0;
+      line-height: 1.6;
+    }
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+    header h1 {
+      font-size: 4em;
+      margin: 0.2em 0;
+    }
+    header .subtitle {
+      font-size: 1.4em;
+      color: #555;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #eee;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    section p {
+      font-size: 1.1em;
+      color: #333;
+    }
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #555;
+    }
+    /* Blog posts side by side */
+    #blog-posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    #blog-posts div {
+      flex: 1 1 calc(33% - 20px);
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+      background: #fafafa;
+    }
+    #blog-posts h3 {
+      margin-top: 0;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #555;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Decoded by Siri Lahari</h1>
+    <p class="subtitle">Exploring Technology, Data, and Lifelong Learning</p>
+  </header>
 
-<header>
-    <h1>Siri Lahari</h1>
-    <p class="subtitle">Tech enthusiast • Data explorer • Lifelong learner</p>
-    <p>
-        <a href="https://github.com/sirilahari10">GitHub</a> • 
-        <a href="https://www.linkedin.com/in/sirilahari10/">LinkedIn</a>
-    </p>
-</header>
+  <main>
+    <!-- Why I Write Section -->
+    <section>
+      <h2>Why I Write</h2>
+      <p>Technology shouldn’t feel like an exclusive club with its own secret handshake. It’s not just for coders, engineers, or people who can recite programming languages in their sleep. Tech is for everyone, because it shapes the world we all live in.</p>
 
-<main>
-    <!-- Why I Started Section -->
-    <section id="about">
-        <h2>Why I Started This Blog</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>
-                    I started this blog to document my journey in technology and data science,
-                    share my learning experiences, and help others exploring the same fields.
-                </p>
-                <p>
-                    Here, you’ll find tutorials, projects, and insights about programming, data analysis, and tech trends.
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="assets/images/data-science.jpg" alt="Data Science">
-            </div>
+      <h2>My Approach</h2>
+      <p>I take the complicated stuff and turn it into stories you can actually follow, no jargon walls, no “you should already know this” attitude. Just plain language, real-life examples, and a bit of curiosity to keep it fun. If you’ve ever had a friend explain something so clearly that you thought, “Ohhh… now I get it”, that’s exactly the feeling I’m aiming for here.</p>
+
+      <h2>What You’ll Find Here</h2>
+      <p>From decoding buzzwords to walking through hands-on projects, I share ideas in a way that welcomes everyone. Whether you’ve been in tech for decades or you’re just wondering what “the cloud” actually is, you’ll find something here that makes you think, smile, or maybe even try something new.</p>
+    </section>
+
+    <!-- Blog Section -->
+    <section>
+      <h2>Blog</h2>
+      <div id="blog-posts">
+        <div>
         </div>
+        <div>
+          <h3>Second Blog Post</h3>
+          <p><em>September 7, 2025</em></p>
+          <p>Exploring Python for data analysis with hands-on examples.</p>
+          <a href="#">Read More →</a>
+        </div>
+        <div>
+          <h3>Third Blog Post</h3>
+          <p><em>September 8, 2025</em></p>
+          <p>Diving into web development with HTML, CSS, and JavaScript.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Reach out via <a href="https://github.com/sirilahari10">GitHub</a> or <a href="https://www.linkedin.com/in/sirilahari10/">LinkedIn</a>.</p>
+    <section>
+      <h2>Contact</h2>
+      <p>Reach out to me directly via email or send me a message:</p>
+      <form action="https://formspree.io/f/mjkvjzpa" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p>Or email me at: <a href="mailto:yourname@gmail.com">yourname@gmail.com</a></p>
     </section>
-</main>
+  </main>
 
-<footer>
-    &copy; 2025 Siri Lahari
-</footer>
-
+  <footer style="text-align: center; padding: 20px; border-top: 1px solid #ccc;">
+    <p>© 2025 Siri Lahari</p>
+  </footer>
 </body>
 </html>
-
-
-
 
 
