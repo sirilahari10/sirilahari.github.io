@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,9 @@
     h2 { font-size: 1.8em; margin-top: 1em; color: #111; }
     h3 { font-size: 1.3em; margin-top: 1em; color: #333; }
     p { font-size: 1.1em; margin-bottom: 1em; }
+    a { color: #000; text-decoration: underline; }
+    a:hover { color: #555; }
+    ul { margin: 0 0 1em 1.5em; }
 </style>
 </head>
 <body>
@@ -24,7 +28,7 @@
 
 <main>
     <section>
-        <p>You know that moment when you finish a show and Netflix instantly lines up something new, and it’s exactly what you’re in the mood for? ​​It’s not luck, and it’s definitely not magic. Behind the scenes, data science is working overtime: tracking your habits, learning your tastes, and predicting what you’ll love next. It's proof that the smartest recommendations aren’t guesses, they’re data in disguise.</p>
+        <p>You know that moment when you finish a show and Netflix instantly lines up something new, and it’s exactly what you’re in the mood for? ​​It’s not luck, and it’s definitely not magic. Behind the scenes, data science is working overtime: tracking your habits, learning your tastes, and predicting what you’ll love next. It’s a proof that the smartest recommendations aren’t guesses, they’re data in disguise.</p>
     </section>
 
     <section>
@@ -54,35 +58,17 @@ I clicked anyway (curiosity won), but bailed halfway through the first episode. 
 That moment stuck with me. It reminded me that these systems aren’t static, they learn from what we click, what we skip, and even what we abandon. Every action is feedback. Every choice subtly rewrites the system’s understanding of us, shaping what we see next.</p>
     </section>
 
-<section>
-    <h2>💻 Try It Yourself: A Mini Recommender</h2>
-    <p>Curious how this works under the hood? I built a simple demo using Python and Streamlit. Here’s how it works:</p>
-    <ul>
-        <li>Rate a few shows</li>
-        <li>The app compares your ratings with others</li>
-        <li>It recommends titles based on collaborative filtering and content clues</li>
-    </ul>
-    <p>
-<a href="https://sirilahari10-sirilahari-github-io-app-5fdozj.streamlit.app/" target="_blank"
-   style="
-      display:inline-block;
-      padding:10px 20px;
-      background:#ffffff;
-      color:#ff4b4b;
-      font-weight:500;
-      border:1px solid #ff4b4b;
-      border-radius:9999px;
-      text-decoration:none;
-      transition:all 0.3s ease;
-   "
-   onmouseover="this.style.background='#ff4b4b';this.style.color='white';"
-   onmouseout="this.style.background='white';this.style.color='#ff4b4b';">
-   Open Mini Recommender
-</a>
-
-    </p>
-</section>
-
+    <section>
+        <h2>💻 Try It Yourself: A Mini Recommender</h2>
+        <p>Curious how this works under the hood? I built a simple demo using Python and Streamlit. Here’s how it works:
+</p>
+        <iframe src="https://sirilahari10-sirilahari-github-io-app-5fdozj.streamlit.app/" width="100%" height="600" frameborder="0"></iframe>
+        <ul>
+            <li>Rate a few shows</li>
+            <li>The app compares your ratings with others</li>
+            <li>It recommends titles based on collaborative filtering and content clues</li>
+        </ul>
+    </section>
 
     <section>
         <h2>🚀 Why This Matters</h2>
