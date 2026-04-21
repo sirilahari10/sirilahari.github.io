@@ -19,8 +19,8 @@
     /* Global Reset & Typography */
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #FAFAFC; /* A very soft, premium off-white */
-      color: #2D3748; /* Slate gray, softer than harsh black */
+      background-color: #FAFAFC;
+      color: #2D3748; 
       margin: 0;
       line-height: 1.7; 
     }
@@ -50,7 +50,7 @@
       transition: color 0.3s ease;
     }
     nav a:hover {
-      color: #3182CE; /* A sharp tech blue on hover */
+      color: #3182CE; 
     }
 
     /* Header Section */
@@ -125,7 +125,17 @@
     }
   </style>
 </head>
+
 <body>
+  <nav>
+    <div class="logo">Siri Lahari</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="https://github.com/sirilahari10" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/sirilahari10/" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
   <header>
     <h1>Decoded by Siri Lahari</h1>
     <p class="subtitle">Exploring Technology, Data, and Lifelong Learning</p>
@@ -146,23 +156,26 @@
     <section>
       <h2>Blog</h2>
       <div id="blog-posts">
-        <div>
+        
+        <div class="card">
           <h3>🎬 How Netflix Knows What You’ll Watch Next</h3>
           <p><em>September 6, 2025</em></p>
           <p>Ever notice how Netflix seems to know exactly what you’re in the mood for, even before you do? That’s not luck. It’s data science doing what it does best.</p>
           <a href="netflix-recommendation.html">Read More →</a>
         </div>
-        <div>
+
+        <div class="card">
           <h3>👁️ The Science of Seeing</h3>
           <p><em>September 16, 2025</em></p>
           <p>You know that moment you open your phone’s photo app, and it has already sorted your pictures? Ever wondered how can a machine look at a picture and know what’s in it?</p>
           <a href="the-science-of-seeing.html">Read More →</a>
         </div>
+
       </div>
     </section>
   </main> 
 
-  <footer style="text-align: center; padding: 20px; border-top: 1px solid #ccc;">
+  <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid #E2E8F0; color: #718096;">
     <p>© 2025 Siri Lahari</p>
   </footer>
 </body>
