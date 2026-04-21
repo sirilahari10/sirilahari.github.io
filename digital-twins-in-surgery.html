@@ -11,72 +11,90 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Twins in Surgery | Decoded by Siri</title>
+  <title>The Surgeon’s Secret Architect | Decoded by Siri</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   
   <style>
-    body { font-family: 'Lato', sans-serif; background-color: #FAFAF8; color: #2C2C2C; margin: 0; line-height: 1.8; -webkit-font-smoothing: antialiased; }
-    
-    nav { 
-      display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; 
-      background: rgba(250, 250, 248, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid #EBEBE6; position: sticky; top: 0; z-index: 100; 
-    }
+    body { font-family: 'Lato', sans-serif; background-color: #FAFAF8; color: #2C2C2C; margin: 0; line-height: 1.8; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: rgba(250, 250, 248, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #EBEBE6; position: sticky; top: 0; z-index: 100; }
     nav .logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.4em; }
     nav .links a { color: #555555; text-decoration: none; margin-left: 35px; font-weight: 400; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
 
     header { padding: 80px 20px 40px; text-align: center; }
-    header h1 { font-family: 'Playfair Display', serif; font-size: 3em; font-weight: 800; margin: 0; line-height: 1.2; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: 3.2em; font-weight: 800; margin: 0; line-height: 1.2; }
     header .author { font-size: 1.1em; color: #666666; font-style: italic; margin-top: 10px; }
 
     main { max-width: 750px; margin: 0 auto 80px; padding: 0 25px; }
     section { margin-bottom: 60px; }
     
-    h2 { font-family: 'Playfair Display', serif; font-size: 2em; font-weight: 600; color: #1A1A1A; border-bottom: 1px solid #C86B53; padding-bottom: 10px; display: inline-block; margin-bottom: 25px; margin-top: 30px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 2em; font-weight: 600; color: #1A1A1A; border-bottom: 1px solid #C86B53; padding-bottom: 10px; display: inline-block; margin-bottom: 25px; }
     p { font-size: 1.15em; color: #444444; }
 
-    /* Interactive Comparison Slider */
-    .comparison-container {
-      position: relative;
-      width: 100%;
-      max-width: 500px;
-      margin: 40px auto;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* Interactive Tap Section */
+    .interaction-container {
+      background: #FFFFFF;
       border: 1px solid #EBEBE6;
-      background: #000;
-      touch-action: pan-y;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     }
-    .comparison-image {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 5em; user-select: none;
+    .scan-box {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1/1;
+      background: #1A1A1A;
+      margin: 0 auto 30px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      transition: 0.5s ease;
+      border: 4px solid #1A1A1A;
     }
-    #raw-scan { background: #111; color: #333; z-index: 1; }
-    #segmented-twin { 
-      background: #C86B53; color: #fff; z-index: 2; 
-      width: 50%; border-right: 3px solid #fff;
+    .scan-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 4em;
+      font-weight: 800;
+      color: #333;
+      transition: 0.5s ease;
     }
-    .slider-label {
-      position: absolute; bottom: 20px; font-size: 0.7em; 
-      text-transform: uppercase; letter-spacing: 2px; padding: 5px 10px; border-radius: 4px;
+    .analyze-btn {
+      background: #C86B53;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(200, 107, 83, 0.3);
+    }
+    .analyze-btn:hover { transform: scale(1.05); background: #B05D47; }
+    
+    /* State changes when active */
+    .scan-box.active {
+      border-color: #C86B53;
+      box-shadow: 0 0 30px rgba(200, 107, 83, 0.4);
+    }
+    .scan-box.active .scan-label {
+      color: #FFFFFF;
+      text-shadow: 0 0 20px rgba(255,255,255,0.5);
     }
 
-    /* Info Box */
     .highlight-box { background: #f4f4f2; padding: 30px; border-radius: 12px; border-left: 5px solid #C86B53; margin: 30px 0; }
-
     footer { text-align: center; padding: 60px 20px; color: #888888; border-top: 1px solid #EBEBE6; }
 
-    /* Mobile Adjustments */
     @media (max-width: 768px) {
       nav { flex-direction: column; padding: 15px; gap: 10px; }
-      nav .links a { margin: 0 10px; font-size: 0.75em; }
       header h1 { font-size: 2.2em; }
-      main { padding: 0 20px; }
+      .interaction-container { padding: 25px; }
     }
   </style>
 </head>
@@ -92,65 +110,62 @@
   </nav>
 
   <header>
-    <h1>🏗️ Beyond 2D: Building a "Digital Twin" for the Operating Room</h1>
+    <h1>🏗️ The Surgeon’s Secret Architect: How We Turn Flat Scans into 3D Worlds</h1>
     <p class="author">By Siri Lahari Chava</p>
   </header>
 
   <main>
     <section>
-        <p>For decades, surgeons have operated in a mental "3D puzzle." They look at flat, black-and-white CT scans—thousands of horizontal slices, and have to mentally reconstruct those images to understand exactly where a blockage or a tumor sits in 3D space.</p>
-        <p>In Data Science, we've found a way to bridge that gap. We take those raw pixels and turn them into <strong>Digital Twins.</strong></p>
+        <p>A surgeon’s job is a bit like a master craftsman’s, but they are working in the dark. They use flat, black-and-white CT scans—slices of data—to guess exactly where a blockage or a nerve sits in 3D space. It’s an incredible mental puzzle, but it’s high-friction and high-stress.</p>
+        <p>In Data Science, a bridge is built. These raw pixels are taken and segmented into a usable <strong>Digital Twin.</strong></p>
     </section>
 
-    <section style="text-align: center;">
-        <h2>Interactive: Peel Back the Layers</h2>
-        <p style="font-size: 0.9em; font-style: italic;">Slide your finger or mouse across the box below to see how AI "segments" raw data into a usable 3D model.</p>
+    <section class="interaction-container">
+        <h3>Interactive: Run the Segmentation</h3>
+        <p style="font-size: 0.9em; margin-bottom: 25px;">Tap the button to see how raw data (grey) transforms into a 3D mapped model (glow).</p>
         
-        <div class="comparison-container" id="slider-box">
-            <div class="comparison-image" id="raw-scan">
-                <span>2D</span>
-                <div class="slider-label" style="left: 20px; background: rgba(0,0,0,0.5); color: white;">Raw Scan</div>
-            </div>
-            <div class="comparison-image" id="segmented-twin">
-                <span style="position: absolute; left: 50%; transform: translateX(-50%);">3D</span>
-                <div class="slider-label" style="right: -120px; background: white; color: #C86B53;">Digital Twin</div>
-            </div>
+        <div class="scan-box" id="scanDisplay">
+            <span class="scan-label" id="scanText">2D</span>
         </div>
+        
+        <button class="analyze-btn" onclick="runAnalysis()">Run AI Analysis</button>
     </section>
 
     <section>
-        <h2>The Math of "Seeing" Bone</h2>
-        <p>How does the computer know what is bone and what is air? It's a process called <strong>Image Segmentation.</strong></p>
-        <p>An algorithm scans every pixel in a medical image. It looks at the density (the "Hounsfield" value) of each point. Bone is dense; air is not. The AI labels every single pixel across 500+ slices and "stitches" them together into a high-definition, 3D roadmap.</p>
+        <h2>Stitching the Slices</h2>
+        <p>How does the computer know what is bone and what is air? It's a process called <strong>Image Segmentation.</strong> An algorithm scans every pixel in a medical image and looks at the density. Bone is dense; air is not.</p>
+        <p>By labeling every single pixel across 500+ slices and "stitching" them together, we create a high-definition roadmap. It's no longer just a picture; it's a model.</p>
     </section>
 
     <div class="highlight-box">
-        <h3>Why this matters for Surgeons</h3>
-        <p>In complex areas like the airway or the sinuses, the workspace is tiny. Digital Twins allow surgeons to use VR headsets to walk through the patient's anatomy before the surgery even begins. It turns a guess into a plan.</p>
+        <h3>Why this matters for your Dad</h3>
+        <p>In areas like the airway, the space is tiny. Digital Twins allow surgeons to use VR headsets or 3D prints to "walk through" the patient's specific anatomy before the surgery begins. It turns an educated guess into a perfect plan.</p>
     </div>
 
     <section>
         <h2>Zero-Friction Medicine</h2>
-        <p>By automating the construction of these models, we remove the "mental friction" for doctors. Instead of spending energy imagining the 3D space, they can spend that energy on the surgical procedure itself. It's a partnership between the architect (Data Science) and the craftsman (The Surgeon).</p>
+        <p>By automating the construction of these models, we remove the "mental friction" for doctors. Data science acts as the master architect, taking the raw materials and building the house, so the surgeon can focus on being the craftsman.</p>
     </section>
   </main>
 
   <script>
-    const container = document.getElementById('slider-box');
-    const segmented = document.getElementById('segmented-twin');
-
-    function moveSlider(e) {
-        const rect = container.getBoundingClientRect();
-        let x = (e.pageX || e.touches[0].pageX) - rect.left;
-        if (x < 0) x = 0;
-        if (x > rect.width) x = rect.width;
-        
-        let percentage = (x / rect.width) * 100;
-        segmented.style.width = percentage + '%';
+    function runAnalysis() {
+      const box = document.getElementById('scanDisplay');
+      const text = document.getElementById('scanText');
+      const btn = document.querySelector('.analyze-btn');
+      
+      // Simulate "thinking"
+      btn.innerText = "Analyzing Pixels...";
+      btn.style.opacity = "0.7";
+      
+      setTimeout(() => {
+        box.classList.add('active');
+        text.innerText = "3D";
+        btn.innerText = "Analysis Complete";
+        btn.style.opacity = "1";
+        btn.style.background = "#1A1A1A";
+      }, 800);
     }
-
-    container.addEventListener('mousemove', moveSlider);
-    container.addEventListener('touchmove', moveSlider);
   </script>
 
   <footer>
