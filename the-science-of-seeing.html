@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of Seeing | Siri Lahari Chava</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; color: #000; margin: 0; line-height: 1.6; }
+        header { padding: 40px 20px; text-align: center; border-bottom: 1px solid #ccc; }
+        header h1 { font-size: 2.8em; margin: 0.2em 0; }
+        main { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.8em; margin-top: 1em; color: #111; }
+        h3 { font-size: 1.3em; margin-top: 1em; color: #333; }
+        p { font-size: 1.1em; margin-bottom: 1em; }
+        a { color: #000; text-decoration: underline; }
+        a:hover { color: #555; }
+        ul { margin: 0 0 1em 1.5em; font-size: 1.1em; }
+        .back-link { display: inline-block; margin-top: 20px; font-weight: bold; }
+        .btn { display: inline-block; background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin: 10px 0; }
+        .btn:hover { background: #333; color: #fff; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>👁️ The Science of Seeing: How Computers Recognize Faces and Objects</h1>
+    <p>By Siri Lahari Chava</p>
+</header>
+
+<main>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <section>
+        <p>You know that moment you open your phone’s photo app, and it has already sorted your pictures, finding all the ones of your dog or automatically grouping every photo of your friend? Or when your phone unlocks just by glancing at it?</p>
+        <p>It feels like magic. How can a machine look at a picture and know what’s in it? The answer is both more technical and more incredible than you might think. A computer doesn't see with its eyes; it sees with numbers.</p>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+    <section>
+        <h2>The World is Just a Grid</h2>
+        <p>To a human, an image is a person, a dog, a sunset. To a computer, an image is just a massive grid of numbers. Every single pixel in that image has a numerical value that represents its color and brightness. A photo of your friend is just a giant spreadsheet of thousands of numbers. The challenge for a data scientist is teaching a computer to find a pattern in that sea of numbers that corresponds to a face.</p>
+    </section>
+
+    <section>
+        <h2>How a Computer Learns to See</h2>
+        <p>So, how do we teach a computer to see? We do what we do with children: we show them examples. But instead of showing them just a few, we show them millions.</p>
+        <p>Using a process called machine learning, we train an algorithm with a massive dataset of labeled images, millions of photos tagged as "dog," "cat," "car," and "human face." This data is the raw material the computer uses to build a visual memory.</p>
+        <p>The algorithm doesn't memorize every image. Instead, it builds a powerful neural network that finds the unique, numerical patterns that define a "dog-ness" or a "face-ness."</p>
+    </section>
+
+    <section>
+        <h2>The Layers of Understanding</h2>
+        <p>The most common type of neural network used for this is called a Convolutional Neural Network (CNN). It's built in layers, each with a specific job, much like the different parts of our own visual cortex.</p>
+        <ul>
+            <li><strong>The First Layer:</strong> This layer starts simple. It scans the grid of numbers, looking for basic patterns like lines, edges, and curves. It might find the sharp line of a nose or the curve of an eyelid.</li>
+            <li><strong>The Middle Layers:</strong> The information from the first layer is fed into the next. These layers look for more complex patterns. They might combine an arc and a line to identify an eye, or several curves to recognize a mouth.</li>
+            <li><strong>The Final Layer:</strong> This layer takes all of the sophisticated patterns it has identified and makes a decision. Based on the presence of a nose, two eyes, a mouth, and the general shape of a head, it determines with a high degree of confidence that the object is a "face."</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Try It Yourself: See Like a Computer 💻</h2>
+        <p>Curious how this works in a simple way? You can try a mini-interactive demonstration of how a basic AI model "sees" a handwritten number.</p>
+        
+        <a href="YOUR_STREAMLIT_APP_LINK_HERE" class="btn" target="_blank">Launch the AI Drawing App</a>
+        
+        <p><strong>Draw a number:</strong> Use your mouse or finger to draw a number (0-9) on the screen.<br>
+        <strong>Watch the AI guess:</strong> As you draw, the AI model instantly "looks" at the numbers you're drawing and tries to guess what number you're creating.</p>
+        <p>This simple demo is powered by the same logic as your phone's photo sorter. The system has been trained on thousands of handwritten numbers. It's not magic, it's data in action, making an educated guess based on the lines and shapes you create.</p>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+    <section>
+        <h2>The "Woah, Really?" Moment</h2>
+        <p>The incredible part is that this entire process, from turning an image into numbers to running it through a multi-layered network to a final identification happens in a split second. The next time you open your phone and it recognizes your friend's face in a photo taken years ago, remember that it's a powerful, hidden algorithm that has been trained on a world of data, and can now find patterns in numbers faster and more accurately than any human eye. It's the silent science of seeing, living right in your pocket.</p>
+    </section>
+
+</main>
+
+</body>
+</html>
