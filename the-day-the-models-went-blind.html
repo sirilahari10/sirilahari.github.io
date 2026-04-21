@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-23GNBX1VK8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-23GNBX1VK8');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Day the Models Went Blind | Decoded by Siri</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+  
+  <style>
+    :root { --bg: #fcfcfc; --text: #1a1a1a; --accent: #C86B53; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.7; }
+    
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 50px; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 1000; }
+    nav .logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--text); }
+    nav .logo span { color: var(--accent); }
+    
+    article { max-width: 680px; margin: 60px auto; padding: 0 20px; }
+    header { margin-bottom: 40px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1.1; margin-bottom: 10px; }
+    .sub-head { font-style: italic; font-family: 'Playfair Display', serif; color: #666; font-size: 1.3rem; margin-top: 0; }
+    
+    p { font-size: 1.1rem; margin-bottom: 24px; }
+    
+    .chart-container { background: #fff; border: 1px solid #ddd; padding: 15px; margin: 40px 0; border-radius: 4px; }
+    .chart-container img { width: 100%; height: auto; display: block; }
+    .caption { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #888; margin-top: 10px; text-align: center; display: block; }
+
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-top: 50px; }
+    
+    .code-callout { font-family: 'Space Mono', monospace; background: #f4f4f4; padding: 25px; border-left: 3px solid var(--accent); margin: 35px 0; font-size: 0.95rem; }
+    .high-light { color: var(--accent); font-weight: 600; }
+
+    footer { text-align: center; padding: 100px 0 50px; border-top: 1px solid #eee; color: #888; font-family: 'Space Mono', monospace; font-size: 0.8rem; }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo">Decoded by <span>Siri</span></a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>The Day the Models Went Blind</h1>
+      <p class="sub-head">What the 2026 oil crisis taught me about the silent failure mode that nobody talks about.</p>
+    </header>
+
+    <p>I was doom-scrolling at like 11pm when I first saw it.</p>
+    
+    <p>The Strait of Hormuz—this narrow strip of water I actually had to Google the location of—effectively closed. Oil prices didn't gradually rise. They detonated. Brent crude went from $81 a barrel to nearly $128 in weeks.</p>
+
+    <p>I started thinking about the models. Because somewhere out there, in banks, trading desks, energy companies, hundreds of carefully built forecasting models had just been handed a future they had never seen before. And most of them had absolutely no idea.</p>
+
+    <h2>The assumption nobody tells you about</h2>
+    <p>Every forecasting model makes one quiet assumption that almost nobody talks about out loud: <strong>The future will behave like the past.</strong></p>
+
+    <p>The patterns, the volatility, the statistical relationships—they'll roughly follow the same rules. This has a name: <em>stationarity</em>. And it's the invisible foundation that almost every time series model is built on.</p>
+
+    <p>Then February 28th happened. And that assumption just stopped being true. That's called a <strong>structural break</strong>. And it might be the most dangerous thing that can happen to a model running in production.</p>
+
+    <div class="chart-container">
+      <img src="download (1).png" alt="Forecasting failure graph">
+      <span class="caption">Figure 1: The model (flat line) stays "confident" while reality (spike) leaves it behind.</span>
+    </div>
+
+    <h2>What the numbers actually showed</h2>
+    <p>I pulled 578 trading days of real Brent crude data and trained an ARIMA model on everything up to February 28th. Then let it forecast forward into the crisis.</p>
+
+    <p>The model's forecast flatlined around $70, neat confidence interval, very sure of itself. Meanwhile, reality went to $118. The model wasn't broken or buggy. It was doing exactly what it was designed to do. The problem was the world it learned from no longer existed.</p>
+
+    <div class="code-callout">
+      // Testing the break point<br>
+      F-Statistic: <span class="high-light">1031</span><br>
+      p-value: <span class="high-light">0.000000</span>
+    </div>
+
+    <p>For context, an F-statistic of 4 or 5 is usually enough to call something significant. <span class="high-light">1031</span> means the two halves of this time series might as well be from two different planets. The p-value was 0.000000—the test couldn't even express how certain it was.</p>
+
+    <h2>The part that really got me</h2>
+    <p>Confirming a break after the fact is easy. But how quickly would a live model catch it? That's what <strong>CUSUM monitoring</strong> is for. You track the running total of forecast errors. When a model starts going systematically wrong in one direction, the cumulative error climbs. When it crosses a threshold, you get an alert.</p>
+    
+    <p>The first alert triggered on March 5th. <strong>Five trading days after the Strait closed.</strong></p>
+
+    <p>Then I tried something more interesting: I fed the full time series to the <strong>PELT algorithm</strong> (change point detection) with zero information. No break date, no context. It found the break on February 27th. One day off. No prior knowledge. Just pattern recognition.</p>
+
+    <h2>The lesson</h2>
+    <p>The original model wasn't bad. It was just loyal to a world that no longer existed. Structural breaks happen to every model eventually. A competitor launches. A regulation passes. A supply chain snaps. Most of them don't make headlines; they just quietly make your predictions wrong.</p>
+
+    <p>The models that survive long-term aren't the ones with the "best" architecture. They're the ones built by people who assumed they'd eventually be wrong, and built systems to notice. I find that more interesting than any benchmark.</p>
+  </article>
+
+  <footer>
+    <p>&copy; 2025 Decoded by Siri // [ 1031_F_STAT ]</p>
+  </footer>
+</body>
+</html>
