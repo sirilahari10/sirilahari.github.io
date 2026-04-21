@@ -120,17 +120,75 @@
         <p>In Data Science, a bridge is built. These raw pixels are taken and segmented into a usable <strong>Digital Twin.</strong></p>
     </section>
 
-    <section class="interaction-container">
-        <h3>Interactive: Run the Segmentation</h3>
-        <p style="font-size: 0.9em; margin-bottom: 25px;">Tap the button to see how a raw CT data slice (grey) is transformed into a segmented 3D map (glow).</p>
-        
-        <div class="scan-box" id="scanDisplay">
-            <div id="rawIcon" style="font-size: 80px; color: #333; transition: 0.5s;">🔳</div>
-            <div id="segmentedIcon" style="font-size: 100px; position: absolute; opacity: 0; transition: 0.8s; filter: drop-shadow(0 0 15px #C86B53);">🧠</div>
-        </div>
-        
-        <button class="analyze-btn" id="actionBtn" onclick="runAnalysis()">Run AI Analysis</button>
-    </section>
+   <style>
+  .pro-interaction {
+    max-width: 500px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  .image-compare {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    background: #000;
+  }
+
+  /* The Raw Scan (Bottom Layer) */
+  .image-compare img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* The 3D Model (Top Layer - Hidden) */
+  .segmented-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    z-index: 2;
+  }
+
+  /* When Tapped or Hovered */
+  .image-compare:active .segmented-overlay,
+  .image-compare:hover .segmented-overlay {
+    opacity: 1;
+  }
+
+  .caption-tag {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #888;
+  }
+</style>
+
+<section class="pro-interaction">
+  <h2>The Transformation</h2>
+  <p style="font-size: 0.9em; margin-bottom: 20px;">Hold or Hover to see the AI "Segment" the scan.</p>
+  
+  <div class="image-compare">
+    <img src="https://images.unsplash.com/photo-1530213786676-41ad9f7736f6?auto=format&fit=crop&q=80&w=800" alt="Raw CT Scan">
+    
+    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800" class="segmented-overlay" alt="3D Segmented Twin">
+  </div>
+  
+  <span class="caption-tag">Raw Data Slice → 3D Digital Twin</span>
+</section>
 
     <section>
         <h2>Stitching the Slices</h2>
@@ -145,32 +203,7 @@
     </section>
   </main>
 
-  <script>
-    function runAnalysis() {
-      const box = document.getElementById('scanDisplay');
-      const raw = document.getElementById('rawIcon');
-      const twin = document.getElementById('segmentedIcon');
-      const btn = document.getElementById('actionBtn');
-      
-      // Stage 1: Analyze
-      btn.innerText = "Processing Slices...";
-      btn.style.opacity = "0.7";
-      raw.style.transform = "scale(0.8)";
-      raw.style.opacity = "0.5";
-      
-      setTimeout(() => {
-        // Stage 2: Transform
-        box.classList.add('active');
-        raw.style.opacity = "0";
-        twin.style.opacity = "1";
-        twin.style.transform = "scale(1.1)";
-        
-        btn.innerText = "Analysis Complete";
-        btn.style.opacity = "1";
-        btn.style.background = "#1A1A1A";
-      }, 1000);
-    }
-  </script>
+
 
   <footer>
     <p>© 2025 Siri Lahari Chava. Built from scratch.</p>
