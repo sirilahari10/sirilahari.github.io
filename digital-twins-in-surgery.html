@@ -116,19 +116,20 @@
 
   <main>
     <section>
-        <p>A surgeon’s job is a bit like a master craftsman’s, but they are working in the dark. They use flat, black-and-white CT scans—slices of data—to guess exactly where a blockage or a nerve sits in 3D space. It’s an incredible mental puzzle, but it’s high-friction and high-stress.</p>
+        <p>A surgeon’s job is a bit like a craftsman’s, but they are working in the dark. They use flat, black-and-white CT scans—slices of data—to guess exactly where a blockage or a nerve sits in 3D space. It’s an incredible mental puzzle, but it’s high-friction and high-stress.</p>
         <p>In Data Science, a bridge is built. These raw pixels are taken and segmented into a usable <strong>Digital Twin.</strong></p>
     </section>
 
     <section class="interaction-container">
         <h3>Interactive: Run the Segmentation</h3>
-        <p style="font-size: 0.9em; margin-bottom: 25px;">Tap the button to see how raw data (grey) transforms into a 3D mapped model (glow).</p>
+        <p style="font-size: 0.9em; margin-bottom: 25px;">Tap the button to see how a raw CT data slice (grey) is transformed into a segmented 3D map (glow).</p>
         
         <div class="scan-box" id="scanDisplay">
-            <span class="scan-label" id="scanText">2D</span>
+            <div id="rawIcon" style="font-size: 80px; color: #333; transition: 0.5s;">🔳</div>
+            <div id="segmentedIcon" style="font-size: 100px; position: absolute; opacity: 0; transition: 0.8s; filter: drop-shadow(0 0 15px #C86B53);">🧠</div>
         </div>
         
-        <button class="analyze-btn" onclick="runAnalysis()">Run AI Analysis</button>
+        <button class="analyze-btn" id="actionBtn" onclick="runAnalysis()">Run AI Analysis</button>
     </section>
 
     <section>
@@ -137,10 +138,6 @@
         <p>By labeling every single pixel across 500+ slices and "stitching" them together, we create a high-definition roadmap. It's no longer just a picture; it's a model.</p>
     </section>
 
-    <div class="highlight-box">
-        <h3>Why this matters for your Dad</h3>
-        <p>In areas like the airway, the space is tiny. Digital Twins allow surgeons to use VR headsets or 3D prints to "walk through" the patient's specific anatomy before the surgery begins. It turns an educated guess into a perfect plan.</p>
-    </div>
 
     <section>
         <h2>Zero-Friction Medicine</h2>
@@ -151,20 +148,27 @@
   <script>
     function runAnalysis() {
       const box = document.getElementById('scanDisplay');
-      const text = document.getElementById('scanText');
-      const btn = document.querySelector('.analyze-btn');
+      const raw = document.getElementById('rawIcon');
+      const twin = document.getElementById('segmentedIcon');
+      const btn = document.getElementById('actionBtn');
       
-      // Simulate "thinking"
-      btn.innerText = "Analyzing Pixels...";
+      // Stage 1: Analyze
+      btn.innerText = "Processing Slices...";
       btn.style.opacity = "0.7";
+      raw.style.transform = "scale(0.8)";
+      raw.style.opacity = "0.5";
       
       setTimeout(() => {
+        // Stage 2: Transform
         box.classList.add('active');
-        text.innerText = "3D";
+        raw.style.opacity = "0";
+        twin.style.opacity = "1";
+        twin.style.transform = "scale(1.1)";
+        
         btn.innerText = "Analysis Complete";
         btn.style.opacity = "1";
         btn.style.background = "#1A1A1A";
-      }, 800);
+      }, 1000);
     }
   </script>
 
