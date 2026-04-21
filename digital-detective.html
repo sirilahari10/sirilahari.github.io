@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JYHTD7XTV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6JYHTD7XTV');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Detective | Decoded by Siri</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lato:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Lato', sans-serif; background-color: #FAFAF8; color: #2C2C2C; margin: 0; line-height: 1.8; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: rgba(250, 250, 248, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #EBEBE6; position: sticky; top: 0; z-index: 100; }
+    nav .logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.4em; color: #1A1A1A; }
+    nav .links a { color: #555555; text-decoration: none; margin-left: 35px; font-weight: 400; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.85em; }
+    
+    header { padding: 80px 20px 40px; text-align: center; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: 3.5em; font-weight: 800; margin: 0; color: #1A1A1A; }
+    
+    main { max-width: 750px; margin: 0 auto 80px; padding: 0 25px; }
+
+    /* The Interactive Detective Boxes */
+    .case-file {
+      background: #FFFFFF;
+      border-left: 5px solid #C86B53;
+      padding: 30px;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      border-radius: 0 12px 12px 0;
+    }
+    .data-stream {
+      font-family: 'JetBrains Mono', monospace;
+      background: #f4f4f2;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.9em;
+      color: #C86B53;
+      margin: 15px 0;
+    }
+    .reveal-btn {
+      background: #1A1A1A;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      margin-top: 10px;
+    }
+    .hidden-content {
+      display: none;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px dashed #ccc;
+      color: #444;
+      font-style: italic;
+    }
+
+    footer { text-align: center; padding: 40px 20px; border-top: 1px solid #EBEBE6; color: #888888; }
+    
+    @media (max-width: 768px) {
+        header h1 { font-size: 2.5em; }
+        nav { flex-direction: column; padding: 15px; gap: 10px; }
+        nav .links a { margin-left: 15px; }
+    }
+  </style>
+
+  <script>
+    function toggleReveal(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">Decoded by Siri</div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="index.html#all-writing">All Writing</a>
+      <a href="https://www.linkedin.com/in/siri-lahari-chava100" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>🕵️‍♂️ Digital Detective: Spotting the Intruder in a Billion Dots</h1>
+  </header>
+
+  <main>
+    <section>
+        <p>I want to play a game. Don't worry, it’s not <em>Saw</em>—it’s just a puzzle. Below is a stream of data representing "Normal Activity" for a high-end coffee machine. Your job is to find the one entry that doesn't belong.</p>
+        
+        <div class="case-file">
+            <h3>Case File #01: The Overheated Grinder</h3>
+            <div class="data-stream">
+                1. TEMP: 180°F | PRESSURE: 9 BAR | STATUS: OK<br>
+                2. TEMP: 182°F | PRESSURE: 9 BAR | STATUS: OK<br>
+                3. TEMP: 245°F | PRESSURE: 2 BAR | STATUS: OK<br>
+                4. TEMP: 179°F | PRESSURE: 9 BAR | STATUS: OK
+            </div>
+            <button class="reveal-btn" onclick="toggleReveal('reveal1')">Analyze Data</button>
+            <div id="reveal1" class="hidden-content">
+                <strong>The Verdict:</strong> Entry #3 is the anomaly. Even though the "Status" says OK, the temperature is 60 degrees too high and the pressure dropped. To a human, that's obvious. But how does a computer catch that in a split second?
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Normal is a Moving Target</h2>
+        <p>In data science, we call this <strong>Anomaly Detection</strong>. It’s how your bank knows you didn't buy that $2,000 treadmill in Norway, and how NASA knows a satellite's engine is about to fail before it actually breaks.</p>
+        <p>The trick isn't looking for "bad" things. The trick is defining <strong>"Normal."</strong></p>
+        <p>Think of it like a heartbeat. A heart rate of 140 BPM is totally normal if you’re running a marathon. It is terrifying if you are sitting on your couch watching Netflix. Context is everything.</p>
+    </section>
+
+    <section>
+        <div class="case-file">
+            <h3>Case File #02: The Midnight Shopper</h3>
+            <p>Imagine a user who only buys groceries on Sunday mornings. Suddenly, at 3:00 AM on a Tuesday, they spend $400 at an electronics store. The "dots" shifted. The machine learning model sees this new dot sitting far away from the "cluster" of Sunday morning grocery dots.</p>
+            <button class="reveal-btn" onclick="toggleReveal('reveal2')">How the AI thinks</button>
+            <div id="reveal2" class="hidden-content">
+                The AI uses <strong>Clustering</strong>. It groups all your "normal" habits into a tight circle. When a new action falls outside that circle, the alarm goes off. It doesn't need to know <em>why</em> it's weird—it just knows it doesn't belong in the circle.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Why We Can't Just Use Rules</h2>
+        <p>You might think, "Why not just write a rule: <em>If Price > $500, Flag it?</em>"</p>
+        <p>Because the world changes. If it’s Black Friday, everyone is spending $500. If we used rigid rules, the bank would block every single card on the planet. High-performance models have to be flexible. They have to learn that "Normal" looks different on a Tuesday than it does on a holiday.</p>
+    </section>
+
+    <section>
+        <h2>The Detective That Never Sleeps</h2>
+        <p>In my work with anomaly detection, the goal is always speed. When you're dealing with millions of transactions per second, you can't be slow. You have to be a detective that can scan a billion "Case Files" in the blink of an eye.</p>
+        <p>So, the next time your bank texts you to ask "Was this you?", know that a tiny AI detective just finished a Choose-Your-Own-Adventure game with your data—and it caught the intruder just in time.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Siri Lahari Chava. Built from scratch.</p>
+  </footer>
+</body>
+</html>
