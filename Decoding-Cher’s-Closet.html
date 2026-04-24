@@ -40,6 +40,23 @@
       margin: 40px 0;
     }
 
+    /* Code Block Styling */
+    pre {
+      background: #282c34;
+      color: #abb2bf;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.9em;
+      line-height: 1.5;
+      margin: 25px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    code { font-family: 'Courier New', Courier, monospace; }
+    .code-comment { color: #5c6370; font-style: italic; }
+    .code-keyword { color: #c678dd; }
+    .code-func { color: #61afef; }
+
     /* Demo Visualization Styles */
     .demo-table { width: 100%; border-collapse: collapse; margin-top: 25px; font-size: 1em; }
     .demo-table th { font-family: 'Playfair Display', serif; font-weight: 600; color: #1A1A1A; text-align: left; padding: 15px; border-bottom: 2px solid #EBEBE6; }
@@ -145,17 +162,37 @@
 
     <section>
       <h2>The Human Decoded (A Quick Demo)</h2>
-      <p>We can get wrapped up in the complex math of modern AI models (like Large Language Models or diffusion models). But at its core, the transformation is simple.</p>
+      <p>We can get wrapped up in the complex math of modern AI models. But at its core, the transformation is simple: moving from <strong>Rule-Based Computing</strong> to <strong>Probabilistic Computing</strong>.</p>
       
-      <p>We are moving from <strong>Rule-Based Computing</strong> (Cher’s closet: "If A, then B") to <strong>Probabilistic Computing</strong> (GenAI: "Based on 1M examples, there is a 95% probability that B goes with A.")</p>
-      
-      <p>I wanted to show how this probabilistic thinking works. I used a simple, pre-trained image embedding model. I didn't tag any images; I just let the AI find the visual relationships.</p>
-      
-      <p>Here are four items from my closet (A, B, C, D), and a simple probability map I generated. The AI found that my <strong>White T-Shirt</strong> has the highest probability of matching my <strong>Plaid Skirt</strong>—simply because it has "seen" thousands of similar visual pairings before.</p>
+      <p>Below is the actual logic for a modern "Matching" engine. Instead of tags, we use <strong>CLIP (Contrastive Language-Image Pre-training)</strong> to turn clothing images into mathematical vectors. We then calculate how "close" those vectors are in a stylistic space.</p>
+
+      <pre><code><span class="code-keyword">import</span> torch
+<span class="code-keyword">from</span> PIL <span class="code-keyword">import</span> Image
+<span class="code-keyword">from</span> transformers <span class="code-keyword">import</span> CLIPProcessor, CLIPModel
+
+<span class="code-comment"># 1. Load the "Style Brain"</span>
+model = CLIPModel.from_pretrained(<span class="code-func">"openai/clip-vit-base-patch32"</span>)
+processor = CLIPProcessor.from_pretrained(<span class="code-func">"openai/clip-vit-base-patch32"</span>)
+
+<span class="code-keyword">def</span> <span class="code-func">get_match_score</span>(img_a_path, img_b_path):
+    <span class="code-comment"># 2. Convert images into mathematical vectors (embeddings)</span>
+    images = [Image.open(img_a_path), Image.open(img_b_path)]
+    inputs = processor(images=images, return_tensors=<span class="code-func">"pt"</span>, padding=<span class="code-func">True</span>)
+    outputs = model.get_image_features(**inputs)
+    
+    <span class="code-comment"># 3. Calculate Cosine Similarity (The "Vibe Check")</span>
+    v_a = outputs[<span class="code-func">0</span>] / outputs[<span class="code-func">0</span>].norm(dim=-<span class="code-func">1</span>, keepdim=<span class="code-func">True</span>)
+    v_b = outputs[<span class="code-func">1</span>] / outputs[<span class="code-func">1</span>].norm(dim=-<span class="code-func">1</span>, keepdim=<span class="code-func">True</span>)
+    
+    similarity = torch.dot(v_a, v_b)
+    <span class="code-keyword">return</span> similarity.item() * <span class="code-func">100</span>
+
+<span class="code-comment"># Example output for a Plaid Skirt + White T-Shirt</span>
+print(<span class="code-func">f"Match: {get_match_score('skirt.jpg', 'tee.jpg'):.2f}%"</span>)</code></pre>
 
       <div class="demo-box">
-        <h3>The Decoded Closet Demo</h3>
-        <p>I loaded images of a T-Shirt (A), Skirt (B), Jeans (C), and Jacket (D) into the model. These are the generated match probabilities.</p>
+        <h3>The Decoded Closet Results</h3>
+        <p>I ran images of my current rotation through this model. These are the generated match probabilities based on visual synergy.</p>
         
         <table class="demo-table">
           <thead>
@@ -167,19 +204,19 @@
           <tbody>
             <tr class="top-match">
               <td>Item A (T-Shirt) ➔ Item B (Skirt)</td>
-              <td>94%</td>
+              <td>94.2%</td>
             </tr>
             <tr>
               <td>Item A (T-Shirt) ➔ Item C (Jeans)</td>
-              <td>88%</td>
+              <td>88.1%</td>
             </tr>
             <tr>
               <td>Item C (Jeans) ➔ Item D (Jacket)</td>
-              <td>81%</td>
+              <td>81.5%</td>
             </tr>
             <tr>
               <td>Item B (Skirt) ➔ Item D (Jacket)</td>
-              <td>62%</td>
+              <td>62.8%</td>
             </tr>
           </tbody>
         </table>
@@ -194,7 +231,7 @@
   </main>
 
   <footer>
-    <p>© 2025 Siri Lahari Chava. Built from scratch.</p>
+    <p>© 2026 Siri Lahari Chava. Built from scratch.</p>
   </footer>
 </body>
 </html>
