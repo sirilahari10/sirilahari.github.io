@@ -530,21 +530,21 @@
 
   <p>I expected the clusters to be messier. I expected the algorithm to need 10 or 12 groups to make sense of 29,737 films. It didn't. <strong>Six was clean.</strong> The elbow in the curve was clear and decisive.</p>
 
-  <p>What surprised me more was where specific movies landed. <strong>Forrest Gump</strong> — widely remembered as an uplifting American story — is a False Hope. The data reads its plot as building toward something and then collapsing. Which, if you think about it, is exactly right. Jenny dies. The warmth of the ending is bittersweet at best. The algorithm caught something the marketing never admitted.</p>
+  <p>What surprised me more was where specific movies landed. <strong>Forrest Gump</strong>, widely remembered as an uplifting American story, is a False Hope. The data reads its plot as building toward something and then collapsing. Which, if you think about it, is exactly right. Jenny dies. The warmth of the ending is bittersweet at best. The algorithm caught something the marketing never admitted.</p>
 
   <div class="highlight-box">
-    <p><strong style="color: var(--accent)">The Intern is a Triumph.</strong> Shape 6. Rough start, uncertain middle, warm ending. It shares its arc with Titanic and Finding Nemo — which sounds ridiculous until you map the emotional journey and realize all three follow the same curve: descent into difficulty, slow rebuild, resolution that earns its feeling.</p>
+    <p><strong style="color: var(--accent)">The Intern is a Triumph.</strong> Shape 6. Rough start, uncertain middle, warm ending. It shares its arc with Titanic and Finding Nemo, which sounds ridiculous until you map the emotional journey and realize all three follow the same curve: descent into difficulty, slow rebuild, resolution that earns its feeling.</p>
   </div>
 
   <p>That's the thing about working with data at this scale. You stop seeing movies as individual stories and start seeing them as instances of patterns. Every plot is a data point. Every emotional beat is a signal. And when you have 29,737 of them, the patterns become impossible to ignore.</p>
 
   <div class="section-label">What This Actually Is</div>
 
-  <p>This project is a <strong>Streamlit app</strong> built on top of the CMU Movie Summary Corpus. Paste any plot — a movie, a book, even a story you're writing — and it classifies the emotional arc in real time, shows you the sentiment curve, and tells you which famous films share your story's DNA.</p>
+  <p>This project is a <strong>Streamlit app</strong> built on top of the CMU Movie Summary Corpus. Paste any plot, a movie, a book, even a story you're writing, and it classifies the emotional arc in real time, shows you the sentiment curve, and tells you which famous films share your story's DNA.</p>
 
   <p>The pipeline uses VADER for sentiment scoring, K-means clustering trained on all 29,737 arcs, and a custom weighting system that gives extra importance to the ending of a plot — because how a story ends matters more than how it begins.</p>
 
-  <p>The code is on GitHub. The insight is older than film. <strong>Kurt Vonnegut said stories have shapes in 1995.</strong> It just took 29,737 data points to prove him right.</p>
+  <p>The insight is older than film. <strong>Kurt Vonnegut said stories have shapes in 1995.</strong> It just took 29,737 data points to prove him right.</p>
 
   <div class="divider"></div>
 
