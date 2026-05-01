@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Every Movie Is One of 6 Stories — Siri Lahari Chava</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0c0c;
+    --surface: #141414;
+    --border: #222;
+    --text: #e8e8e0;
+    --muted: #666;
+    --accent: #e8c87a;
+    --c1: #e74c3c;
+    --c2: #4a9eff;
+    --c3: #2ecc71;
+    --c4: #f39c12;
+    --c5: #b388ff;
+    --c6: #1abc9c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.4;
+  }
+
+  /* ── HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 84px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-meta {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .hero-meta span { color: var(--accent); }
+
+  .scroll-line {
+    position: absolute;
+    bottom: 48px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.2s;
+  }
+
+  .scroll-line::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--muted);
+  }
+
+  /* ── ARTICLE BODY */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px 120px;
+  }
+
+  /* ── PULL QUOTE */
+  .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding: 24px 0 24px 32px;
+    margin: 64px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .pull-quote.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── BODY TEXT */
+  .article p {
+    font-size: 18px;
+    line-height: 1.85;
+    color: #c8c8c0;
+    margin-bottom: 28px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .article p.visible { opacity: 1; transform: translateY(0); }
+
+  .article p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .article p a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(232,200,122,0.3);
+    transition: border-color 0.2s;
+  }
+
+  .article p a:hover { border-color: var(--accent); }
+
+  /* ── SECTION LABEL */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 80px 0 24px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .section-label.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── SHAPE CARDS */
+  .shapes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 48px 0;
+  }
+
+  .shape-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s;
+  }
+
+  .shape-card.visible { opacity: 1; transform: translateY(0); }
+  .shape-card:hover { border-color: #444; }
+
+  .shape-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--card-color);
+  }
+
+  .shape-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--card-color);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .shape-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .shape-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  /* ── SVG ARC */
+  .arc-svg {
+    width: 100%;
+    height: 48px;
+    margin-bottom: 14px;
+  }
+
+  .shape-movies {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--card-color);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── STAT BLOCK */
+  .stat-row {
+    display: flex;
+    gap: 24px;
+    margin: 64px 0;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    flex: 1;
+    min-width: 140px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .stat.visible { opacity: 1; transform: translateY(0); }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 32px;
+    margin: 48px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .highlight-box.visible { opacity: 1; transform: translateY(0); }
+
+  .highlight-box p {
+    margin: 0;
+    font-size: 16px;
+    color: #b8b8b0;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* ── FOOTER */
+  .article-footer {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 16px;
+  }
+
+  .author {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .author strong { color: var(--text); font-style: normal; }
+
+  .try-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #0c0c0c;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .try-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  /* ── ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── DIVIDER */
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--border);
+    margin: 56px 0;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 24px; }
+    .article { padding: 0 24px 80px; }
+    .shapes-grid { grid-template-columns: 1fr; }
+    .stat-row { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Data Science · NLP · Pattern Recognition</div>
+  <h1>Every movie ever made is <em>one of 6 stories.</em></h1>
+  <p class="hero-sub">I analyzed 29,737 film plots using sentiment analysis and machine learning — and found that Hollywood has been telling the same six stories on repeat since forever.</p>
+  <div class="hero-meta">
+    <span>Siri Lahari Chava</span>
+    · April 2026 · 7 min read
+  </div>
+  <div class="scroll-line">scroll to read</div>
+</section>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p>It started with <strong>The Intern</strong>.</p>
+
+  <p>I was watching it for probably the third time — Anne Hathaway, Robert De Niro, the whole warm fuzzy thing — and somewhere around the midpoint I had this uncomfortable thought: <em>I have seen this exact story before.</em> Not the characters. Not the jokes. The shape of it. The way it moves. The feeling it leaves you with.</p>
+
+  <p>Outsider enters unfamiliar world. Struggles. Earns trust. Changes the place that changed them. Roll credits.</p>
+
+  <p>I'd seen it in <strong>Devil Wears Prada</strong>. In <strong>The Pursuit of Happyness</strong>. In <strong>Finding Nemo</strong>, if you squint. The names change, the settings change, but the emotional journey? Identical.</p>
+
+  <div class="pull-quote">"What if every movie you've ever loved is actually the same movie — just wearing a different costume?"</div>
+
+  <p>Most people would let that thought go. I opened a dataset.</p>
+
+  <div class="section-label">The Method</div>
+
+  <p>The CMU Movie Summary Corpus contains plot summaries for over 42,000 films. I filtered it down to <strong>29,737 movies</strong> with enough text to be meaningful, then ran each plot through a sentiment analysis pipeline — breaking every summary into 10 equal segments and scoring the emotional tone of each one.</p>
+
+  <p>The result for each movie is an <strong>emotional arc</strong>: a curve showing how the feeling of the story rises and falls from opening scene to final frame. Hopeful start? The curve goes up. Dark middle? It dips. Redemptive ending? Back up again.</p>
+
+  <p>Then I ran K-means clustering on all 29,737 arcs and asked the algorithm a simple question: <em>how many natural story shapes actually exist?</em></p>
+
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-number">29,737</div>
+      <div class="stat-label">films analyzed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">story shapes found</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">10</div>
+      <div class="stat-label">emotional segments per plot</div>
+    </div>
+  </div>
+
+  <p>The answer was <strong>6</strong>. Not 3, not 12. Six distinct emotional shapes that account for nearly every film ever made. Vonnegut hypothesized something like this decades ago. I wanted to prove it with data.</p>
+
+  <div class="section-label">The 6 Shapes</div>
+
+  <div class="shapes-grid">
+
+    <div class="shape-card" style="--card-color: var(--c1)">
+      <div class="shape-number">Shape 01 · 4,621 films</div>
+      <div class="shape-name">The Tragedy</div>
+      <svg class="arc-svg" viewBox="0 0 200 48" preserveAspectRatio="none">
+        <polyline points="0,12 20,16 40,20 60,24 80,28 100,30 120,32 140,34 160,36 180,38 200,40"
+          fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="0,12 20,16 40,20 60,24 80,28 100,30 120,32 140,34 160,36 180,38 200,40 200,48 0,48"
+          fill="#e74c3c" opacity="0.12"/>
+      </svg>
+      <div class="shape-desc">Dark from start to finish. No relief, no redemption. The story just gets heavier.</div>
+      <div class="shape-movies">The Godfather II · Spider-Man 3</div>
+    </div>
+
+    <div class="shape-card" style="--card-color: var(--c2)">
+      <div class="shape-number">Shape 02 · 4,971 films</div>
+      <div class="shape-name">The False Hope</div>
+      <svg class="arc-svg" viewBox="0 0 200 48" preserveAspectRatio="none">
+        <polyline points="0,28 20,24 40,20 60,18 80,10 100,8 120,18 140,28 160,34 180,38 200,40"
+          fill="none" stroke="#4a9eff" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="0,28 20,24 40,20 60,18 80,10 100,8 120,18 140,28 160,34 180,38 200,40 200,48 0,48"
+          fill="#4a9eff" opacity="0.12"/>
+      </svg>
+      <div class="shape-desc">Builds toward something good — then falls apart at the end. Hope, then loss.</div>
+      <div class="shape-movies">Forrest Gump · The Notebook · Devil Wears Prada</div>
+    </div>
+
+    <div class="shape-card" style="--card-color: var(--c3)">
+      <div class="shape-number">Shape 03 · 6,212 films</div>
+      <div class="shape-name">The Feel Good</div>
+      <svg class="arc-svg" viewBox="0 0 200 48" preserveAspectRatio="none">
+        <polyline points="0,20 20,18 40,16 60,16 80,14 100,15 120,14 140,16 160,16 180,17 200,16"
+          fill="none" stroke="#2ecc71" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="0,20 20,18 40,16 60,16 80,14 100,15 120,14 140,16 160,16 180,17 200,16 200,48 0,48"
+          fill="#2ecc71" opacity="0.12"/>
+      </svg>
+      <div class="shape-desc">Consistently warm all the way through. No real darkness. Just good.</div>
+      <div class="shape-movies">Inception · Rocky · Clueless</div>
+    </div>
+
+    <div class="shape-card" style="--card-color: var(--c4)">
+      <div class="shape-number">Shape 04 · 4,529 films</div>
+      <div class="shape-name">The Roller Coaster</div>
+      <svg class="arc-svg" viewBox="0 0 200 48" preserveAspectRatio="none">
+        <polyline points="0,24 20,20 40,10 60,28 80,16 100,8 120,30 140,20 160,32 180,24 200,20"
+          fill="none" stroke="#f39c12" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="0,24 20,20 40,10 60,28 80,16 100,8 120,30 140,20 160,32 180,24 200,20 200,48 0,48"
+          fill="#f39c12" opacity="0.12"/>
+      </svg>
+      <div class="shape-desc">Up, down, up, down. It never lets you settle. Classic adventure structure.</div>
+      <div class="shape-movies">Schindler's List · Harry Potter</div>
+    </div>
+
+    <div class="shape-card" style="--card-color: var(--c5)">
+      <div class="shape-number">Shape 05 · 4,196 films</div>
+      <div class="shape-name">The Slow Burn</div>
+      <svg class="arc-svg" viewBox="0 0 200 48" preserveAspectRatio="none">
+        <polyline points="0,18 20,18 40,20 60,22 80,26 100,30 120,32 140,34 160,36 180,38 200,40"
+          fill="none" stroke="#b388ff" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="0,18 20,18 40,20 60,22 80,26 100,30 120,32 140,34 160,36 180,38 200,40 200,48 0,48"
+          fill="#b388ff" opacity="0.12"/>
+      </svg>
+      <div class="shape-desc">Starts okay. Slowly unravels. Hope fades quietly. You barely notice until it's gone.</div>
+      <div class="shape-movies">Mean Girls · Gravity</div>
+    </div>
+
+    <div class="shape-card" style="--card-color: var(--c6)">
+      <div class="shape-number">Shape 06 · 5,208 films</div>
+      <div class="shape-name">The Triumph</div>
+      <svg class="arc-svg" viewBox="0 0 200 48" preserveAspectRatio="none">
+        <polyline points="0,38 20,36 40,34 60,30 80,28 100,26 120,22 140,18 160,14 180,12 200,10"
+          fill="none" stroke="#1abc9c" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="0,38 20,36 40,34 60,30 80,28 100,26 120,22 140,18 160,14 180,12 200,10 200,48 0,48"
+          fill="#1abc9c" opacity="0.12"/>
+      </svg>
+      <div class="shape-desc">Rough start, hard middle — but it ends on a high. Dark to light.</div>
+      <div class="shape-movies">Titanic · Finding Nemo · The Pursuit of Happyness</div>
+    </div>
+
+  </div>
+
+  <div class="section-label">The Finding That Surprised Me</div>
+
+  <p>I expected the clusters to be messier. I expected the algorithm to need 10 or 12 groups to make sense of 29,737 films. It didn't. <strong>Six was clean.</strong> The elbow in the curve was clear and decisive.</p>
+
+  <p>What surprised me more was where specific movies landed. <strong>Forrest Gump</strong> — widely remembered as an uplifting American story — is a False Hope. The data reads its plot as building toward something and then collapsing. Which, if you think about it, is exactly right. Jenny dies. The warmth of the ending is bittersweet at best. The algorithm caught something the marketing never admitted.</p>
+
+  <div class="highlight-box">
+    <p><strong style="color: var(--accent)">The Intern is a Triumph.</strong> Shape 6. Rough start, uncertain middle, warm ending. It shares its arc with Titanic and Finding Nemo — which sounds ridiculous until you map the emotional journey and realize all three follow the same curve: descent into difficulty, slow rebuild, resolution that earns its feeling.</p>
+  </div>
+
+  <p>That's the thing about working with data at this scale. You stop seeing movies as individual stories and start seeing them as instances of patterns. Every plot is a data point. Every emotional beat is a signal. And when you have 29,737 of them, the patterns become impossible to ignore.</p>
+
+  <div class="section-label">What This Actually Is</div>
+
+  <p>This project is a <strong>Streamlit app</strong> built on top of the CMU Movie Summary Corpus. Paste any plot — a movie, a book, even a story you're writing — and it classifies the emotional arc in real time, shows you the sentiment curve, and tells you which famous films share your story's DNA.</p>
+
+  <p>The pipeline uses VADER for sentiment scoring, K-means clustering trained on all 29,737 arcs, and a custom weighting system that gives extra importance to the ending of a plot — because how a story ends matters more than how it begins.</p>
+
+  <p>The code is on GitHub. The insight is older than film. <strong>Kurt Vonnegut said stories have shapes in 1995.</strong> It just took 29,737 data points to prove him right.</p>
+
+  <div class="divider"></div>
+
+  <div class="article-footer">
+    <div class="author">Written by <strong>Siri Lahari Chava</strong><br>Data Scientist · Frisco, TX</div>
+    <a href="#" class="try-btn">Try the app →</a>
+  </div>
+
+</article>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, entry.target.dataset.delay || 0);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('p, .pull-quote, .section-label, .stat, .shape-card, .highlight-box').forEach((el, i) => {
+    el.dataset.delay = (i % 4) * 80;
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
