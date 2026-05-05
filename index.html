@@ -1,194 +1,522 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decoded by Siri | Tech Simplified</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg: #FAFAF8;
-      --text: #1A1A1A;
-      --accent: #C86B53;
-      --card-bg: #FFFFFF;
-      --border: #EBEBE6;
-      --glass: rgba(255, 255, 255, 0.8);
-    }
 
-    [data-theme="dark"] {
-      --bg: #0F0F0F;
-      --text: #F0F0F0;
-      --accent: #FF8A65;
-      --card-bg: #1A1A1A;
-      --border: #2C2C2C;
-      --glass: rgba(15, 15, 15, 0.8);
-    }
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-23GNBX1VK8"></script>
 
-    * { box-sizing: border-box; transition: background 0.3s ease, color 0.3s ease; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; overflow-x: hidden; }
+<script>
 
-    /* Navigation */
-    nav {
-      display: flex; justify-content: space-between; align-items: center; padding: 15px 50px;
-      background: var(--glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000;
-    }
-    .logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.5em; letter-spacing: -0.5px; }
-    .nav-right { display: flex; align-items: center; gap: 30px; }
-    .nav-right a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.85em; text-transform: uppercase; letter-spacing: 1px; }
-    
-    /* Dark Mode Toggle */
-    #theme-toggle {
-      background: none; border: 1px solid var(--border); padding: 5px 12px; border-radius: 20px;
-      cursor: pointer; color: var(--text); font-size: 0.8em;
-    }
+window.dataLayer = window.dataLayer || [];
 
-    /* Hero Section with Animation */
-    header { padding: 120px 20px; text-align: center; animation: fadeIn 1s ease-out; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    
-    header h1 { font-family: 'Playfair Display', serif; font-size: 5em; font-weight: 800; margin: 0; }
-    .subtitle { font-size: 1.2em; opacity: 0.7; font-style: italic; margin-top: 10px; }
+function gtag(){dataLayer.push(arguments);}
 
-    main { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
+gtag('js', new Date());
 
-    /* Interactive Cards */
-    #blog-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-    .card { 
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; 
-      padding: 40px; position: relative; overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .card:hover { transform: scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent); }
-    .tag { color: var(--accent); font-weight: 800; font-size: 0.75em; text-transform: uppercase; margin-bottom: 15px; display: block; }
-    
-    /* Filter Pills */
-    .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin: 40px 0; }
-    .filter-pill { 
-      padding: 8px 20px; border-radius: 30px; border: 1px solid var(--border); 
-      background: transparent; color: var(--text); cursor: pointer; transition: 0.3s;
-    }
-    .filter-pill.active, .filter-pill:hover { background: var(--accent); color: white; border-color: var(--accent); }
+gtag('config', 'G-23GNBX1VK8');
 
-    /* Archive List Appearance */
-    .archive-item { 
-      display: flex; justify-content: space-between; padding: 25px 15px; border-bottom: 1px solid var(--border);
-      opacity: 0; transform: translateX(-10px); transition: 0.4s;
-    }
-    .archive-item.show { opacity: 1; transform: translateX(0); }
-    .archive-item a { font-family: 'Playfair Display', serif; font-size: 1.4em; color: var(--text); text-decoration: none; }
-    
-    footer { padding: 100px 20px; text-align: center; opacity: 0.6; font-size: 0.9em; }
+</script>
 
-    @media (max-width: 768px) {
-      header h1 { font-size: 3em; }
-      nav { padding: 15px 20px; }
-    }
-  </style>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Decoded by Siri</title>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+body { font-family: 'Lato', sans-serif; background-color: #FAFAF8; color: #2C2C2C; margin: 0; line-height: 1.8; }
+
+
+
+nav {
+
+display: flex; justify-content: space-between; align-items: center; padding: 20px 50px;
+
+background: rgba(250, 250, 248, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+
+border-bottom: 1px solid #EBEBE6; position: sticky; top: 0; z-index: 100;
+
+}
+
+nav .logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.4em; }
+
+nav .links { display: flex; gap: 35px; }
+
+nav .links a { color: #555555; text-decoration: none; font-weight: 400; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; transition: 0.3s; }
+
+nav a:hover { color: #C86B53; }
+
+
+
+header { padding: 100px 20px; text-align: center; }
+
+header h1 { font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 800; margin: 0; line-height: 1.1; }
+
+header .subtitle { font-size: 1.2em; color: #666666; font-style: italic; margin-top: 15px; }
+
+
+
+main { max-width: 850px; margin: 0 auto 80px; padding: 0 25px; }
+
+section { margin-bottom: 90px; }
+
+h2 { font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1A1A1A; border-bottom: 1px solid #C86B53; padding-bottom: 10px; display: inline-block; margin-bottom: 25px; }
+
+p { font-size: 1.15em; color: #444444; }
+
+
+
+/* IDEA 2: Cards with accent bar */
+
+#blog-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; margin-top: 40px; }
+
+.card { background: #FFFFFF; border: 1px solid #EBEBE6; border-radius: 15px; transition: 0.4s; display: flex; flex-direction: column; overflow: hidden; }
+
+.card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.04); }
+
+.card-accent-bar { height: 4px; background: #C86B53; width: 100%; flex-shrink: 0; }
+
+.card-inner { padding: 30px 35px 35px; display: flex; flex-direction: column; flex-grow: 1; }
+
+.tag { color: #C86B53; font-weight: 700; text-transform: uppercase; font-size: 0.8em; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+
+.card h3 { font-family: 'Playfair Display', serif; font-size: 1.7em; margin: 10px 0; line-height: 1.3; }
+
+.card p { flex-grow: 1; }
+
+.card-footer-row { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
+
+.card-meta { font-size: 0.82em; color: #999999; }
+
+.read-more { color: #1A1A1A; font-weight: 700; text-decoration: none; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid transparent; transition: 0.3s; }
+
+.read-more:hover { border-bottom: 2px solid #C86B53; }
+
+
+
+/* IDEA 4: Filter pills */
+
+.filter-bar { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 28px; }
+
+.filter-pill { font-size: 0.78em; padding: 5px 16px; border-radius: 20px; border: 1px solid #DDDDD8; color: #666666; background: #FFFFFF; cursor: pointer; transition: all 0.2s; font-weight: 400; letter-spacing: 0.3px; }
+
+.filter-pill:hover { border-color: #C86B53; color: #C86B53; }
+
+.filter-pill.active { background: #C86B53; color: #FFFFFF; border-color: #C86B53; }
+
+
+
+/* IDEA 1: Archive with read time */
+
+.archive-list { list-style: none; padding: 0; margin: 0; }
+
+.archive-item { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #EBEBE6; transition: 0.2s; }
+
+.archive-item:last-child { border-bottom: none; }
+
+.archive-item a { font-family: 'Playfair Display', serif; font-size: 1.25em; color: #1A1A1A; text-decoration: none; font-weight: 600; transition: 0.3s; padding-right: 20px; }
+
+.archive-item a:hover { color: #C86B53; }
+
+.archive-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+
+.archive-meta { font-size: 0.82em; color: #888888; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+
+.read-time-pill { font-size: 0.75em; color: #777777; background: #F2F1EC; border: 1px solid #E4E3DC; border-radius: 20px; padding: 2px 10px; white-space: nowrap; }
+
+
+
+/* IDEA 5: Pull quote (use inside article pages) */
+
+.pull-quote { border-left: 3px solid #C86B53; margin: 40px 0; padding: 12px 24px; background: #F7F6F2; border-radius: 0 8px 8px 0; }
+
+.pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.25em; font-style: italic; color: #2C2C2C; line-height: 1.6; margin: 0; }
+
+
+
+footer { text-align: center; padding: 60px 20px; color: #888888; font-size: 0.95em; border-top: 1px solid #EBEBE6; }
+
+
+
+@media (max-width: 768px) {
+
+nav { flex-direction: column; padding: 20px; gap: 15px; }
+
+header h1 { font-size: 2.8em; }
+
+main { padding: 0 20px; }
+
+.archive-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+}
+
+</style>
+
 </head>
-<body data-theme="light">
 
-  <nav>
-    <div class="logo">Decoded.</div>
-    <div class="nav-right">
-      <a href="#all-writing">Writing</a>
-      <button id="theme-toggle">Dark Mode</button>
-    </div>
-  </nav>
 
-  <header>
-    <h1>Decoded by Siri</h1>
-    <p class="subtitle">Where complex tech meets human stories.</p>
-  </header>
 
-  <main>
-    <section>
-      <div id="blog-posts">
-        <div class="card">
-          <span class="tag">AI & Machine Learning</span>
-          <h3>🧠 The Ultimate Autocomplete</h3>
-          <p>How ChatGPT plays a massive game of probability to mimic human thought.</p>
-          <a href="#" class="read-more">Read Entry →</a>
-        </div>
-        <div class="card">
-          <span class="tag">Data Engineering</span>
-          <h3>🚰 The Invisible Plumbing</h3>
-          <p>Exploring why clean data is the unsung hero of the modern world.</p>
-          <a href="#" class="read-more">Read Entry →</a>
-        </div>
-      </div>
-    </section>
+<body>
 
-    <section id="all-writing">
-      <h2 style="font-family: 'Playfair Display'; margin-top: 80px;">Archive</h2>
-      <div class="filter-bar">
-        <button class="filter-pill active" data-filter="all">All</button>
-        <button class="filter-pill" data-filter="Data Science">Data Science</button>
-        <button class="filter-pill" data-filter="Retail Analytics">Retail Analytics</button>
-      </div>
+<nav>
 
-      <div class="archive-list" id="archive-list">
-        <div class="archive-item show" data-topic="Retail Analytics">
-          <a href="#">The Checkout Trap</a>
-          <span class="tag">Retail</span>
-        </div>
-        <div class="archive-item show" data-topic="Data Science">
-          <a href="#">Inside the Netflix Algorithm</a>
-          <span class="tag">Data Science</span>
-        </div>
-      </div>
-    </section>
-  </main>
+<div class="logo">Decoded by Siri</div>
 
-  <footer>
-    <p>© 2026 Siri Lahari Chava • Thoughtfully Crafted</p>
-  </footer>
+<div class="links">
 
-  <script>
-    // Theme Toggle Logic
-    const toggle = document.getElementById('theme-toggle');
-    const body = document.body;
+<a href="index.html">Home</a>
 
-    toggle.addEventListener('click', () => {
-      const current = body.getAttribute('data-theme');
-      const next = current === 'light' ? 'dark' : 'light';
-      body.setAttribute('data-theme', next);
-      toggle.innerText = next === 'light' ? 'Dark Mode' : 'Light Mode';
-    });
+<a href="#all-writing">All Writing</a>
 
-    // Intersection Observer for Scroll Animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.1 });
+<a href="https://www.linkedin.com/in/siri-lahari-chava100" target="_blank">LinkedIn</a>
 
-    document.querySelectorAll('.archive-item').forEach(item => observer.observe(item));
+</div>
 
-    // Filter Logic
-    const pills = document.querySelectorAll('.filter-pill');
-    const items = document.querySelectorAll('.archive-item');
+</nav>
 
-    pills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        pills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        const filter = pill.dataset.filter;
-        
-        items.forEach(item => {
-          if (filter === 'all' || item.dataset.topic === filter) {
-            item.style.display = 'flex';
-            setTimeout(() => item.classList.add('show'), 10);
-          } else {
-            item.classList.remove('show');
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
+
+
+<header>
+
+<h1>Decoded by Siri</h1>
+
+<p class="subtitle">Exploring Technology, Data, and Lifelong Learning</p>
+
+</header>
+
+
+
+<main>
+
+<section>
+
+<h2>Why I Write</h2>
+
+<p>Technology shouldn't feel like an exclusive club with its own secret handshake. It's not just for coders, engineers, or people who can recite programming languages in their sleep. Tech is for everyone.</p>
+
+
+
+<h2>My Approach</h2>
+
+<p>I take the complicated stuff and turn it into stories you can actually follow, no jargon walls, no "you should already know this" attitude. Just plain language, real-life examples, and a bit of curiosity.</p>
+
+
+
+<h2>What You'll Find Here</h2>
+
+<p>From decoding buzzwords to walking through hands-on projects, I share ideas in a way that welcomes everyone. Whether you've been in tech for decades or you're just wondering what "the cloud" actually means.</p>
+
+</section>
+
+
+
+<section>
+
+<h2>Featured Writing</h2>
+
+<div id="blog-posts">
+
+
+
+<div class="card">
+
+<div class="card-accent-bar"></div>
+
+<div class="card-inner">
+
+<span class="tag">AI & Machine Learning</span>
+
+<h3>🧠 The Ultimate Autocomplete: How ChatGPT Actually "Thinks"</h3>
+
+<p>Everyone uses ChatGPT, but very few people know what it's actually doing. It doesn't "know" facts; it just plays a massive game of probability.</p>
+
+<div class="card-footer-row">
+
+<span class="card-meta">5 min read</span>
+
+<a href="the-ultimate-autocomplete.html" class="read-more">Read Article</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-accent-bar"></div>
+
+<div class="card-inner">
+
+<span class="tag">Data Engineering</span>
+
+<h3>🚰 The Invisible Plumbing</h3>
+
+<p>Why clean data is tech's best kept secret. Without the plumbing, the AI is just hot mud. Let's explore the world of ETL.</p>
+
+<div class="card-footer-row">
+
+<span class="card-meta">6 min read</span>
+
+<a href="the-invisible-plumbing.html" class="read-more">Read Article</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+<section id="all-writing">
+
+<h2>Article Archive</h2>
+
+
+
+<div class="filter-bar">
+
+<button class="filter-pill active" data-filter="all">All</button>
+
+<button class="filter-pill" data-filter="Data Science">Data Science</button>
+
+<button class="filter-pill" data-filter="Machine Learning">Machine Learning</button>
+
+<button class="filter-pill" data-filter="Data Engineering">Data Engineering</button>
+
+<button class="filter-pill" data-filter="Healthcare AI">Healthcare AI</button>
+
+<button class="filter-pill" data-filter="Computer Vision">Computer Vision</button>
+
+<button class="filter-pill" data-filter="Generative AI">Generative AI</button>
+
+<button class="filter-pill" data-filter="Retail Analytics">Retail Analytics</button>
+
+</div>
+
+
+
+<ul class="archive-list" id="archive-list">
+
+<li class="archive-item" data-topic="Retail Analytics">
+
+<a href="the-checkout-battle.html">The Checkout Trap</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Retail Analytics</span>
+
+<span class="read-time-pill">5 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Healthcare AI">
+
+<a href="digital-twins-in-surgery.html">The Surgeon's Secret Architect</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Healthcare AI</span>
+
+<span class="read-time-pill">7 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Generative AI">
+
+<a href="the-ultimate-autocomplete.html">The Ultimate Autocomplete</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Generative AI</span>
+
+<span class="read-time-pill">5 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Data Engineering">
+
+<a href="the-invisible-plumbing.html">The Invisible Plumbing</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Data Engineering</span>
+
+<span class="read-time-pill">6 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Machine Learning">
+
+<a href="digital-detective.html">How AI Spots the "Weird" Stuff</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Machine Learning</span>
+
+<span class="read-time-pill">6 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Data Science">
+
+<a href="netflix-recommendation.html">Inside the Netflix Algorithm</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Data Science</span>
+
+<span class="read-time-pill">7 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Computer Vision">
+
+<a href="the-science-of-seeing.html">The Science of Seeing</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Computer Vision</span>
+
+<span class="read-time-pill">5 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Data Science">
+
+<a href="the-day-the-models-went-blind.html">The Day the Models Went Blind</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Data Science</span>
+
+<span class="read-time-pill">6 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Data Science">
+
+<a href="Decoding-Cher’s-Closet.html">Why Clueless is Still the Ultimate GenAI Metaphor</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Computer Vision</span>
+
+<span class="read-time-pill">10 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Data Science">
+
+<a href="movie-patterns.html">How Every Movie Ever Made Is One of 6 Stories</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Data Science</span>
+
+<span class="read-time-pill">10 min</span>
+
+</div>
+
+</li>
+
+<li class="archive-item" data-topic="Data Science">
+
+<a href="3am-internet.html"> America's Hidden Search Behavior</a>
+
+<div class="archive-right">
+
+<span class="archive-meta">Data Science</span>
+
+<span class="read-time-pill">6 min</span>
+
+</div>
+
+</li>
+
+</ul>
+
+</section>
+
+</main>
+
+
+
+<footer>
+
+<p>© 2025 Siri Lahari Chava. Built from scratch.</p>
+
+</footer>
+
+
+
+<script>
+
+const pills = document.querySelectorAll('.filter-pill');
+
+const items = document.querySelectorAll('.archive-item');
+
+
+
+pills.forEach(pill => {
+
+pill.addEventListener('click', () => {
+
+pills.forEach(p => p.classList.remove('active'));
+
+pill.classList.add('active');
+
+const filter = pill.dataset.filter;
+
+items.forEach(item => {
+
+item.style.display = (filter === 'all' || item.dataset.topic === filter) ? 'flex' : 'none';
+
+});
+
+});
+
+});
+
+</scriakept>
+
 </body>
+
 </html>
 
