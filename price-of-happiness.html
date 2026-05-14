@@ -363,7 +363,7 @@
       <p>Correlation between income and happiness could mean money makes you happy, happiness makes you productive and earn more, some third variable causes both, or all three at once. You can't disentangle that from a regression. You need a quasi-experimental design.</p>
 
       <h3>3. Short time windows</h3>
-      <p>Killingsworth's data covered roughly two years. The GSS goes back to 1972. If the threshold shifted over decades — and spoiler: it did — you can't see it without longitudinal depth.</p>
+      <p>Killingsworth's data covered roughly two years. The GSS goes back to 1972. If the threshold shifted over decades, and spoiler: it did, you can't see it without longitudinal depth.</p>
     </section>
 
     <section>
@@ -454,7 +454,7 @@
         <div class="sublabel">Cost-of-living adjusted · 2024 dollars · piecewise regression threshold</div>
       </div>
 
-      <p>That's 56% higher than the $75k quoted in every article for 15 years. And before you say "well, inflation" — the GSS <code>realinc</code> variable is already inflation-adjusted. The gap isn't time. It's geography. It's the fact that nobody accounted for where people actually live.</p>
+      <p>That's 56% higher than the $75k quoted in every article for 15 years. And before you say "well, inflation", the GSS <code>realinc</code> variable is already inflation-adjusted. The gap isn't time. It's geography. It's the fact that nobody accounted for where people actually live.</p>
 
       <div class="chart-box">
         <div class="chart-title">Happiness by income bracket (relative to lowest bracket)</div>
@@ -520,7 +520,7 @@
 
       <p><strong>Yes, money causally buys happiness</strong> , up to a point. This isn't just "rich people happen to be happy." Three different methods all confirm it's directional.</p>
 
-      <p><strong>The real threshold is higher than you've been told</strong> — and it depends on where you live. If you've been using $75k as a mental benchmark, it's time to update your model.</p>
+      <p><strong>The real threshold is higher than you've been told</strong> , and it depends on where you live. If you've been using $75k as a mental benchmark, it's time to update your model.</p>
 
       <p><strong>But chasing income past the threshold appears to backfire.</strong> The marginal happiness return above $117k (COL-adjusted) looks negative in this data. That doesn't mean money is evil past a certain point. It means optimizing purely for income at the expense of everything else probably stops paying off.</p>
 
@@ -534,7 +534,7 @@
 
       <p><strong>Causal identification:</strong> IV used state minimum wage as instrument under the assumption that wage law changes affect income independently of individual happiness factors. DiD used policy variation across states 1972–2024 as natural experiment. Threshold identified via piecewise linear regression with data-driven breakpoint, not assumed in advance.</p>
 
-      <p><strong>Limitations worth naming:</strong> GSS is cross-sectional — different people each year, not a panel. The drop at high incomes could reflect selection. Regional price parity is at census region level, not city level, so NYC vs. Buffalo variation is still underfit. A panel dataset like PSID with MSA-level price data would sharpen this considerably.</p>
+      <p><strong>Limitations worth naming:</strong> GSS is cross-sectional, different people each year, not a panel. The drop at high incomes could reflect selection. Regional price parity is at census region level, not city level, so NYC vs. Buffalo variation is still underfit. A panel dataset like PSID with MSA-level price data would sharpen this considerably.</p>
 
       <div class="callout-box">
         <p> All analysis in Python using <code>pandas</code>, <code>linearmodels</code>, <code>causalml</code>, and <code>matplotlib</code>. Data is free and public. Reproduce it, challenge it, extend it.</p>
